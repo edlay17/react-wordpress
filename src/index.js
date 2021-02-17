@@ -3,10 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+    BrowserRouter as Router,
+    Switch,
+} from "react-router-dom";
+import routes from './pages/index'
+import RouteWithSubRoutes from "./lib/routes/index";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Router>
+          <App />
+          <Switch>
+              {routes.map((route, i) => (
+                  <RouteWithSubRoutes key={i} {...route} />
+              ))}
+          </Switch>
+      </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
