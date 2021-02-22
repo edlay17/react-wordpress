@@ -1,25 +1,38 @@
-import {SinglePostPage} from "./single-post/page";
-import {Error404} from "./error404/page";
+import SinglePostPageContainer from "./singlePostPage/pageContainer";
+import {Homepage} from "./homePage/page";
+import MyProjectsPageContainer from "./myProjectsPage/pageContainer";
+import {NotFoundPage} from "./notFoundPage/page";
 
-const routes = [
+export const routes = [
     {
         path: "/",
         exact: true,
-        component: SinglePostPage,
+        component: Homepage,
     },
     {
-        path: "/one",
+        path: "/aboutProjects",
         exact: true,
-        component: SinglePostPage
+        component: MyProjectsPageContainer
     },
     {
-        path: "/two",
+        path: "/post/:id",
         exact: true,
-        component: SinglePostPage
+        component: SinglePostPageContainer
     },
     {
-        component: Error404
+        path: "/404",
+        exact: true,
+        component: NotFoundPage
+    },
+    {
+        component: Homepage
     },
 ];
 
-export default routes;
+export const links = [
+    {id: 1, linkAddress: "/aboutProjects", linkText: "About projects"},
+    {id: 2, linkAddress: "/two", linkText: "About me (CV)"},
+    {id: 3, linkAddress: "/one", linkText: "Contacts"},
+    {id: 4, linkAddress: "/post/333", linkText: "Setting"},
+    {id: 5, linkAddress: "/404", linkText: "404"},
+];

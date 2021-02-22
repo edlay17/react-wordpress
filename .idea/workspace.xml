@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc6436a8-8efb-46f4-a9d0-25f69130e1ad" name="Default Changelist" comment="" />
+    <list default="true" id="fc6436a8-8efb-46f4-a9d0-25f69130e1ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/homePage/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/myProjectsPage/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/myProjectsPage/pageContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/notFoundPage/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/singlePostPage/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/singlePostPage/pageContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/postsReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/atoms/logo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/atoms/menuLink.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/molecules/breadcrumbs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/molecules/loadingPostCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/molecules/postCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/molecules/searchInputWithIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/organisms/categoryPosts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/organisms/loadingCategoryPosts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/organisms/loadingPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/organisms/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/error404/page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/single-post/page.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +73,13 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\organisms" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\molecules" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -37,11 +91,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613590628380</updated>
-      <workItem from="1613590637710" duration="1315000" />
+      <workItem from="1613590637710" duration="11941000" />
+      <workItem from="1613661288137" duration="16439000" />
+      <workItem from="1613818088342" duration="66775000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="775" y="358" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613945353043">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="775" y="358" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1613945353043" />
+    <state x="687" y="243" width="672" height="678" key="search.everywhere.popup" timestamp="1613640352650">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="687" y="243" width="672" height="678" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1613640352650" />
   </component>
 </project>

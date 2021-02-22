@@ -1,19 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import {
-  Link
-} from "react-router-dom";
+import {links, routes} from "./pages/index";
+import HeaderTemplate from "./ui/organisms/header";
+import store from "./redux/store";
+import {MapRoutes} from "./lib/routes";
+import React from "react";
 
+function App(props) {
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Link className="App-link"  to="/one">Home</Link>
-        <Link className="App-link"  to="/two">Home</Link>
-        <Link className="App-link"  to="/three">Home</Link>
-      </header>
-    </div>
+      <>
+        <HeaderTemplate menuLinks={links}/>
+        <MapRoutes routes={routes} state={store.getState()}/>
+      </>
   );
 }
 

@@ -4,21 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-    BrowserRouter as Router,
-    Switch,
+    BrowserRouter as Router
 } from "react-router-dom";
-import routes from './pages/index'
-import RouteWithSubRoutes from "./lib/routes/index";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import {Provider} from "react-redux";
+import store from '../src/redux/store'
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
-          <App />
-          <Switch>
-              {routes.map((route, i) => (
-                  <RouteWithSubRoutes key={i} {...route} />
-              ))}
-          </Switch>
+          <CssBaseline />
+          <Provider store={store}>
+              <App/>
+          </Provider>
       </Router>
   </React.StrictMode>,
   document.getElementById('root')
