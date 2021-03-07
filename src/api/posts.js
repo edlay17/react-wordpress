@@ -1,12 +1,19 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'https://darvin.su/wp-json/wp/v2/posts?_fields=author,id,excerpt,title,date',
+    baseURL: 'http://wp.edlay.net/wp-json/wp/v2/',
     withCredentials: true,
 });
 
 export const PostAPI = {
-    getPosts: () =>{
-        return instance.get().then(response => response.data);
-    }
+    getPosts: (category) =>{
+        return instance.get(`posts?category_name=${category}&_embed&_fields=author,id,slug,excerpt,title,date,tags,featured_media,_links,_embedded`).then(response => response.data);
+    },
+    getPost: (slug) =>{
+        return instance.get(`posts/?slug=${slug}&_fields=id,content,title`).then(response => response.data);
+    },
+};
+
+export const PageAPI = {
+
 }

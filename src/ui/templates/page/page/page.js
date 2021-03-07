@@ -1,9 +1,7 @@
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
-import BreadcrumbsNavigation from "../../ui/molecules/breadcrumbs";
-import Skeleton from '@material-ui/lab/Skeleton'
-
+import BreadcrumbsNavigation from "../../../molecules/breadcrumbs/breadcrumbs";
 
 const useStyles = makeStyles((theme) => ({
     contentWrapper: {
@@ -18,33 +16,39 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(3)
     },
     content: {
-        marginTop: theme.spacing(4)
-    },
-    contentSkeleton: {
-        height: theme.spacing(100),
+        marginTop: theme.spacing(4),
+        fontSize: theme.spacing(2.7),
+        lineHeight: theme.spacing(0.21),
+        '& img': {
+            maxWidth: "100%",
+            height: "auto",
+        },
+        '& .is-style-rounded img': {
+            borderRadius: "20%",
+        },
+        '& .is-style-twentytwentyone-image-frame img': {
+            padding: "15px",
+            border: "3px solid black",
+        },
     }
 }));
 
-let skeletonItems = [];
-for (let i = 0; i < 40; i++){
-    skeletonItems.push(<Skeleton animation="wave"/>)
-}
+export const PageTemplate = (props) => {
 
-export const LoadingPageTemplate = (props) => {
     const classes = useStyles();
     return (
         <div>
             <Container maxWidth="lg" className={classes.pageWrapper}>
                 <div className={classes.breadcrumbs}>
-                    <BreadcrumbsNavigation breadLinks={props.breadcrumbsLinks} currentPageName={""}/>
+                    <BreadcrumbsNavigation breadLinks={props.breadcrumbsLinks} currentPageName={props.pageTitle}/>
                 </div>
                 <Container maxWidth="lg" className={classes.contentWrapper}>
                     <Typography align="center" variant="h3" component="h1">
-                        <Skeleton/>
+                        {props.pageTitle}
                     </Typography>
                     <Container maxWidth="md">
                         <div className={classes.content}>
-                            <Skeleton animation="wave" variant="rect" className={classes.contentSkeleton}/>
+                            <div className="question-text" dangerouslySetInnerHTML={{__html: props.pageContent}}/>
                         </div>
                     </Container>
                 </Container>
@@ -52,4 +56,4 @@ export const LoadingPageTemplate = (props) => {
         </div>
     )}
 
-export default LoadingPageTemplate;
+export default PageTemplate;

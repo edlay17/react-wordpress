@@ -1,7 +1,7 @@
-import SinglePostPageContainer from "./singlePostPage/pageContainer";
-import {Homepage} from "./homePage/page";
-import MyProjectsPageContainer from "./myProjectsPage/pageContainer";
-import {NotFoundPage} from "./notFoundPage/page";
+import SinglePostPage from "./post/page";
+import {Homepage} from "./index/page";
+import MyProjectsPage from "./posts/page";
+import {NotFoundPage} from "./404/page";
 
 export const routes = [
     {
@@ -10,14 +10,14 @@ export const routes = [
         component: Homepage,
     },
     {
-        path: "/aboutProjects",
+        path: "/posts",
         exact: true,
-        component: MyProjectsPageContainer
+        component: MyProjectsPage
     },
     {
-        path: "/post/:id",
+        path: "/posts/:slug",
         exact: true,
-        component: SinglePostPageContainer
+        component: SinglePostPage
     },
     {
         path: "/404",
@@ -25,12 +25,12 @@ export const routes = [
         component: NotFoundPage
     },
     {
-        component: Homepage
+        component: NotFoundPage
     },
 ];
 
 export const links = [
-    {id: 1, linkAddress: "/aboutProjects", linkText: "About projects"},
+    {id: 1, linkAddress: "/posts", linkText: "About projects"},
     {id: 2, linkAddress: "/two", linkText: "About me (CV)"},
     {id: 3, linkAddress: "/one", linkText: "Contacts"},
     {id: 4, linkAddress: "/post/333", linkText: "Setting"},

@@ -3,7 +3,7 @@ import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import {emphasize, withStyles} from "@material-ui/core/styles";
 import Chip from "@material-ui/core/Chip";
 import {Link as NavLink} from "react-router-dom";
-import MenuLink from "../atoms/menuLink";
+import MenuLink from "../../atoms/menu-link/menu-link";
 
 const StyledBreadcrumb = withStyles((theme) => ({
     root: {

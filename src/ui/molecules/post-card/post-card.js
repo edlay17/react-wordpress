@@ -8,26 +8,24 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardHeader from "@material-ui/core/CardHeader";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Chip from "@material-ui/core/Chip";
-import Grid from "@material-ui/core/Grid";
+import {NavLink} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 480,
     },
     image: {
-        filter: "grayscale(90%)",
+        filter: "grayscale(30%)",
         "&:hover": {
-            filter: "grayscale(0%)"
+            //filter: "grayscale(0%)"
         }
     },
     avatar: {
         backgroundColor: "darkblue"
     },
     tags: {
-        marginTop: "20px",
+        marginTop: theme.spacing(2.5),
         display: 'flex',
         justifyContent: 'left',
         flexWrap: 'wrap',
@@ -48,7 +46,7 @@ export const PostCard = (props) => {
             <CardActionArea>
                 <CardHeader
                     avatar={
-                        <Avatar aria-label="recipe" className={classes.avatar}>
+                        <Avatar aria-label="recipe" src={props.author_image} className={classes.avatar}>
                             E
                         </Avatar>
                     }
@@ -57,9 +55,9 @@ export const PostCard = (props) => {
                 />
                 <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt={`${props.title} image`}
                     height="200"
-                    image="https://s3.amazonaws.com/www-inside-design/uploads/2019/05/portfoliofeature.png"
+                    image={(props.image_url === null) ? "https://ichip.ru/images/cache/2019/7/29/fit_930_519_false_crop_960_600_0_0_q90_4172_6112aacf39.jpeg" : props.image_url}
                     title="Contemplative Reptile"
                     className={classes.image}
                 />
@@ -79,7 +77,7 @@ export const PostCard = (props) => {
                 <Button size="small" color="primary">
                     Share
                 </Button>
-                <Button size="small" color="primary">
+                <Button component={NavLink} to={`/posts/${props.slug}`} size="small" color="primary">
                     Learn More
                 </Button>
             </CardActions>

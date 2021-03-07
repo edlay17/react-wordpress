@@ -8,14 +8,27 @@ import {
 } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {Provider} from "react-redux";
-import store from '../src/redux/store'
+
+import {applyMiddleware, combineReducers, createStore} from 'redux';
+import postsReducer from "./features/posts/model/posts-reducer";
+import postReducer from "./features/post/model/post-reducer";
+import thunk from "redux-thunk";
+
+let reducers = combineReducers({
+    posts: postsReducer,
+    post: postReducer,
+});
+let store = createStore(
+    reducers,
+    applyMiddleware(thunk)
+);
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
           <CssBaseline />
           <Provider store={store}>
-              <App/>
+              <App store={store}/>
           </Provider>
       </Router>
   </React.StrictMode>,

@@ -1,4 +1,4 @@
-import PageTemplate from "../../ui/organisms/page";
+import PageTemplate from "../../ui/templates/page/page/page";
 
 const links = [
 ];
