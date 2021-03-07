@@ -8,10 +8,10 @@ import MenuLink from "../../atoms/menu-link/menu-link";
 import SearchInputWithIcon from "../../molecules/search-input-with-icon/search-input-with-icon"
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    toolBar: {
         justifyContent: "space-between",
     },
-    root2: {
+    appBar: {
         backgroundColor: "#2b2d31",
     }
 }));
@@ -22,9 +22,9 @@ export const HeaderTemplate = (props) => {
         <MenuLink linkTo={link.linkAddress} linkText={link.linkText} key={link.id}/>
     );
     return(
-        <AppBar position="static" className={classes.root2}>
+        <AppBar position="static" className={classes.appBar}>
             <Container position="fixed">
-                <Toolbar className={classes.root}>
+                <Toolbar className={classes.toolBar}>
                     <LogoWithNavLink logoText="Edlay.net"/>
                     <Box>
                         {menuLinks}

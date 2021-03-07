@@ -1,9 +1,8 @@
 import HomeIcon from "@material-ui/icons/Home";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import {emphasize, withStyles} from "@material-ui/core/styles";
+import {emphasize, makeStyles, withStyles} from "@material-ui/core/styles";
 import Chip from "@material-ui/core/Chip";
 import {Link as NavLink} from "react-router-dom";
-import MenuLink from "../../atoms/menu-link/menu-link";
 
 const StyledBreadcrumb = withStyles((theme) => ({
     root: {
@@ -22,16 +21,25 @@ const StyledBreadcrumb = withStyles((theme) => ({
     },
 }))(Chip);
 
+const useStyles = makeStyles((theme) => ({
+    breadCrumbs: {
+        marginBottom: theme.spacing(3)
+    },
+}));
+
 function handleClick(event) {
     event.preventDefault();
 }
 
 export const BreadcrumbsNavigation = (props) => {
+    const classes = useStyles();
+
     const breadLinks = props.breadLinks.map((link) =>
         <StyledBreadcrumb component={NavLink} to={link.linkAddress} label={link.linkText} key={link.key}/>
     );
+
     return(
-        <Breadcrumbs aria-label="breadcrumb">
+        <Breadcrumbs aria-label="breadcrumb" className={classes.breadCrumbs}>
             <StyledBreadcrumb
                 component={NavLink}
                 to="/"

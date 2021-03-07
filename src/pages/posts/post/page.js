@@ -1,4 +1,4 @@
-import PostPage from "../../features/post/components";
+import PostPage from "../../../features/post/components";
 
 export const SinglePostPage = (props) => {
     const links = [

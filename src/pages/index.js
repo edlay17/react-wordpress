@@ -1,4 +1,4 @@
-import SinglePostPage from "./post/page";
+import SinglePostPage from "./posts/post/page";
 import {Homepage} from "./index/page";
 import MyProjectsPage from "./posts/page";
 import {NotFoundPage} from "./404/page";

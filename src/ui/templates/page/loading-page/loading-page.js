@@ -8,11 +8,6 @@ const useStyles = makeStyles((theme) => ({
     contentWrapper: {
         marginTop: theme.spacing(3)
     },
-    breadcrumbs: {
-        '& > * + *': {
-            marginTop: theme.spacing(2),
-        },
-    },
     pageWrapper: {
         marginTop: theme.spacing(3)
     },
@@ -29,9 +24,7 @@ export const LoadingPageTemplate = (props) => {
     return (
         <div>
             <Container maxWidth="lg" className={classes.pageWrapper}>
-                <div className={classes.breadcrumbs}>
-                    <BreadcrumbsNavigation breadLinks={props.breadcrumbsLinks} currentPageName={""}/>
-                </div>
+                <BreadcrumbsNavigation breadLinks={props.breadcrumbsLinks} currentPageName={""}/>
                 <Container maxWidth="lg" className={classes.contentWrapper}>
                     <Typography align="center" variant="h3" component="h1">
                         <Skeleton/>

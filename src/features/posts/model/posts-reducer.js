@@ -18,6 +18,21 @@ export const getPosts = (category) => (dispatch) => {
         dispatch(postsToggleIsFetching(false));
     })
 }
+export const getAllPosts = () => (dispatch) => {
+    dispatch(postsToggleIsFetching(true));
+    PostAPI.getAllPosts().then(data=>{
+        dispatch(setPosts(data));
+        dispatch(postsToggleIsFetching(false));
+    })
+}
+export const getFoundPosts = () => (dispatch) => {
+    dispatch(postsToggleIsFetching(true));
+    PostAPI.getFoundPosts().then(data=>{
+        dispatch(setPosts(data));
+        dispatch(postsToggleIsFetching(false));
+    })
+}
+
 
 let InitialState = {
     postsIsFetching: false,
