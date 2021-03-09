@@ -68,7 +68,7 @@ const postReducer = (state = InitialState, action) => {
             return stateCopy;
             break;
         default:
-            return state
+            return {...state}
             break;
     }
 }

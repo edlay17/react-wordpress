@@ -13,10 +13,12 @@ import {applyMiddleware, combineReducers, createStore} from 'redux';
 import postsReducer from "./features/posts/model/posts-reducer";
 import postReducer from "./features/post/model/post-reducer";
 import thunk from "redux-thunk";
+import searchReducer from "./features/header/search-form/model/search-reducer";
 
 let reducers = combineReducers({
     posts: postsReducer,
     post: postReducer,
+    search: searchReducer,
 });
 let store = createStore(
     reducers,

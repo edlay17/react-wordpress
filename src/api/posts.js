@@ -21,5 +21,7 @@ export const PostAPI = {
 };
 
 export const PageAPI = {
-
+    getPage: (slug) =>{
+        return instance.get(`posts/?slug=${slug}&_fields=id,content,title`).then(response => response.data);
+    },
 }

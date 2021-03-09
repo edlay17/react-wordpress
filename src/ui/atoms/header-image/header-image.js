@@ -7,7 +7,6 @@ export const HeaderImage = (props) => {
             padding: theme.spacing(2),
             textAlign: 'center',
             color: theme.palette.text.secondary,
-            //backgroundImage: "url(https://www.arthermitage.org/img/spacer.gif)",
             backgroundImage: `url(${props.imageSrc})`,
             backgroundSize: "cover",
             backgroundRepeat: "none",

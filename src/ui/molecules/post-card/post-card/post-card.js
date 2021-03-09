@@ -74,9 +74,6 @@ export const PostCard = (props) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
                 <Button component={NavLink} to={`/posts/${props.slug}`} size="small" color="primary">
                     Learn More
                 </Button>

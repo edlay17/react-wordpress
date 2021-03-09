@@ -7,8 +7,8 @@ import {getFoundPosts} from "../model/posts-reducer"
 
 export const FoundPostsPage = (props) => {
     useEffect(() => {
-        dispatch(getFoundPosts());
-    }, []);
+        dispatch(getFoundPosts(props.searchRequest));
+    }, [props.searchRequest]);
     const posts = useSelector(state => state.posts.postsData);
     const isFetching = useSelector(state => state.posts.postsIsFetching);
     const dispatch = useDispatch();

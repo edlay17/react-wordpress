@@ -1,8 +1,13 @@
 import {PostAPI} from "../../../api/posts";
 
 const SET_POSTS = "setPosts";
+const SET_POSTS_FROM_SEARCH = "setPostsFromSearch";
 const POSTS_TOGGLE_IS_FETCHING = "postsToggleIsFetching";
 
+const setPostsFromSearch = (posts) => ({
+    type: SET_POSTS_FROM_SEARCH,
+    posts
+})
 const setPosts = (posts) => ({
     type: SET_POSTS,
     posts
@@ -25,14 +30,14 @@ export const getAllPosts = () => (dispatch) => {
         dispatch(postsToggleIsFetching(false));
     })
 }
-export const getFoundPosts = () => (dispatch) => {
+export const getFoundPosts = (searchRequest) => (dispatch) => {
     dispatch(postsToggleIsFetching(true));
-    PostAPI.getFoundPosts().then(data=>{
-        dispatch(setPosts(data));
+    PostAPI.getFoundPosts(searchRequest).then(data=>{
+        dispatch(setPostsFromSearch(data));
+        console.log(data);
         dispatch(postsToggleIsFetching(false));
     })
 }
-
 
 let InitialState = {
     postsIsFetching: false,
@@ -45,22 +50,48 @@ const postsReducer = (state = InitialState, action) => {
     switch (action.type){
         case SET_POSTS:
             //stateCopy = {...state, postsData: action.posts.map( (elem) => Object.assign({}, elem, {tags: [...elem.tags]}))};
-            stateCopy = {...state, postsData: action.posts.map(elem => (
-                    {
-                        id: elem.id,
-                        slug: elem.slug,
-                        date: elem.date.replace("T", " "),
-                        title: elem.title.rendered,
-                        excerpt: elem.excerpt.rendered,
-                        author: elem._embedded.author[0].name,
-                        author_image_url: elem._embedded.author[0].avatar_urls["48"],
-                        tags: elem._embedded["wp:term"][1].map(elem2 => (elem2.name)),
-                        image_url:
-                            elem.featured_media !== 0 ?
-                            elem._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url :
-                            null,
-                    }
-                ))};
+            if(action.posts != []){
+                stateCopy = {...state, postsData: action.posts.map(elem => (
+                        {
+                            id: elem.id,
+                            slug: elem.slug,
+                            date: elem.date.replace("T", " "),
+                            title: elem.title.rendered,
+                            excerpt: elem.excerpt.rendered,
+                            author: elem._embedded.author[0].name,
+                            author_image_url: elem._embedded.author[0].avatar_urls["48"],
+                            tags: elem._embedded["wp:term"][1].map(elem2 => (elem2.name)),
+                            image_url:
+                                elem.featured_media !== 0 ?
+                                    elem._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url :
+                                    null,
+                        }
+                    ))};
+            }
+            else{
+                stateCopy = {...state, postsData: []};
+            }
+            return stateCopy;
+            break;
+        case SET_POSTS_FROM_SEARCH:
+            if(action.posts != []){
+                stateCopy = {...state, postsData: action.posts.map(elem => (
+                        {
+                            id: elem._embedded.self[0].id,
+                            slug: elem._embedded.self[0].slug,
+                            date: elem._embedded.self[0].date.replace("T", " "),
+                            title: elem._embedded.self[0].title.rendered,
+                            excerpt: elem._embedded.self[0].excerpt.rendered,
+                            author: "",
+                            author_image_url: "",
+                            tags: [],
+                            image_url: ""
+                        }
+                    ))};
+            }
+            else{
+                stateCopy = {...state, postsData: []};
+            }
             return stateCopy;
             break;
         case POSTS_TOGGLE_IS_FETCHING:
@@ -68,7 +99,7 @@ const postsReducer = (state = InitialState, action) => {
             return stateCopy;
             break;
         default:
-            return state
+            return {...state}
             break;
     }
 }

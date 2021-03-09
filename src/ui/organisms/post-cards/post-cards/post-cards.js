@@ -1,5 +1,12 @@
 import Grid from '@material-ui/core/Grid';
 import PostCard from "../../../molecules/post-card/post-card/post-card";
+import {makeStyles} from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        marginBottom: theme.spacing(4),
+    },
+}));
 
 export const PostCards = (props) => {
 
@@ -18,8 +25,9 @@ export const PostCards = (props) => {
             />
         </Grid>
     );
+    const classes = useStyles();
     return (
-        <Grid container spacing={3}>
+        <Grid container spacing={3} className={classes.root}>
             {postsItems}
         </Grid>
     )}

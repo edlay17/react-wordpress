@@ -86,7 +86,6 @@ export const LoadingPostCard = (props) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Skeleton variant="rect" className={classes.button1}/>
                 <Skeleton variant="rect" className={classes.button2}/>
             </CardActions>
         </Card>

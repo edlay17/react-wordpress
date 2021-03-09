@@ -47,19 +47,23 @@ const useStyles = makeStyles((theme) => ({
 export const SearchInputWithIcon = (props) => {
     const classes = useStyles();
     return(
-        <div className={classes.search}>
-            <div className={classes.searchIcon}>
-                <SearchIcon/>
+        <form onKeyDown={props.onKeyPress}>
+            <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                    <SearchIcon/>
+                </div>
+                <InputBase
+                    onChange={props.onChangeSearchText}
+                    placeholder="Search…"
+                    classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput,
+                    }}
+                    value={props.inputValue}
+                    inputProps={{ 'aria-label': 'search' }}
+                />
             </div>
-            <InputBase
-                placeholder="Search…"
-                classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-            />
-        </div>
+        </form>
     )
 }
 

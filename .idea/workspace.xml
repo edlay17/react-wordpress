@@ -20,34 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc6436a8-8efb-46f4-a9d0-25f69130e1ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/images/gory.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/images/ocean.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/search/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/atoms/page-title/page-title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/molecules/header-image/header-image.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/templates/homepage-posts/homepage-posts/homepage-posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/templates/homepage-posts/loading-homepage-posts/loading-homepage-posts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/header/search-form/сomponents/search-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/include/images/forest.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/search/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/organisms/footer/footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/posts/components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/post/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts/post/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/posts/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/breadcrumbs/breadcrumbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/breadcrumbs/breadcrumbs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/loading-post-card/loading-post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/loading-post-card/loading-post-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/organisms/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/category-posts/category-posts/category-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/category-posts/category-posts/category-posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/category-posts/loading-category-posts/loading-category-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/category-posts/loading-category-posts/loading-category-posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/page/loading-page/loading-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/page/loading-page/loading-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/page/page/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/page/page/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/search/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/search-form/model/search-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/atoms/header-image/header-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/atoms/header-image/header-image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/molecules/post-card/loading-post-card/loading-post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/loading-post-card/loading-post-card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/molecules/search-input-with-icon/search-input-with-icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/search-input-with-icon/search-input-with-icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,16 +68,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wp-react\newproject\react-wordpress\src\features\header\search-form\сomponents" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\features\header" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\templates\homepage-posts\homepage-posts" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\organisms\post-cards\post-cards" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\features\post" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\templates\homepage-posts\homepage-posts" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\organisms\post-cards\post-cards" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\molecules" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\molecules\posts" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -104,7 +96,8 @@
       <workItem from="1614504583785" duration="23502000" />
       <workItem from="1614933099392" duration="4636000" />
       <workItem from="1615127764153" duration="1228000" />
-      <workItem from="1615154926996" duration="6508000" />
+      <workItem from="1615154926996" duration="7967000" />
+      <workItem from="1615214727230" duration="22856000" />
     </task>
     <servers />
   </component>
@@ -124,10 +117,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="775" y="358" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615128320483">
+    <state x="775" y="358" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615217521788">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="775" y="358" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1615128320483" />
+    <state x="775" y="358" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1615217521788" />
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615158232295">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -144,9 +137,9 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="687" y="243" width="672" height="678" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1613640352650" />
-    <state x="747" y="468" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1615160122088">
+    <state x="747" y="468" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1615224136231">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="747" y="468" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1615160122088" />
+    <state x="747" y="468" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1615224136231" />
   </component>
 </project>

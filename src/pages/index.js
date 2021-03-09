@@ -1,7 +1,8 @@
 import SinglePostPage from "./posts/post/page";
-import {Homepage} from "./index/page";
+import Homepage from "./index/page";
 import MyProjectsPage from "./posts/page";
-import {NotFoundPage} from "./404/page";
+import NotFoundPage from "./404/page";
+import SearchPostsPage from "./search/page"
 
 export const routes = [
     {
@@ -23,6 +24,11 @@ export const routes = [
         path: "/404",
         exact: true,
         component: NotFoundPage
+    },
+    {
+        path: "/search",
+        exact: true,
+        component: SearchPostsPage
     },
     {
         component: NotFoundPage
