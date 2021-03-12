@@ -20,26 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc6436a8-8efb-46f4-a9d0-25f69130e1ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/header/search-form/сomponents/search-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/images/forest.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/search/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/organisms/footer/footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/search/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/search-form/model/search-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/atoms/header-image/header-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/atoms/header-image/header-image.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/post-card/loading-post-card/loading-post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/loading-post-card/loading-post-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/search-input-with-icon/search-input-with-icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/search-input-with-icon/search-input-with-icon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/404/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/organisms/footer/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/footer/footer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,16 +44,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/include/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/features/posts/model" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wp-react\newproject\react-wordpress\src\features\posts\model" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\features\post" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wp-react\newproject\react-wordpress\src\features\header\search-form\сomponents" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
@@ -75,10 +67,26 @@
       <recent name="C:\wp-react\newproject\react-wordpress\src\ui\templates\homepage-posts\homepage-posts" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\ui\organisms\post-cards\post-cards" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\features\post" />
-    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/App.test.js" />
+      <test-names>
+        <test-name value="renders learn react link" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.renders learn react link" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -97,7 +105,11 @@
       <workItem from="1614933099392" duration="4636000" />
       <workItem from="1615127764153" duration="1228000" />
       <workItem from="1615154926996" duration="7967000" />
-      <workItem from="1615214727230" duration="22856000" />
+      <workItem from="1615214727230" duration="23848000" />
+      <workItem from="1615323736855" duration="1107000" />
+      <workItem from="1615450186204" duration="1331000" />
+      <workItem from="1615543790057" duration="2015000" />
+      <workItem from="1615586720292" duration="5371000" />
     </task>
     <servers />
   </component>
@@ -129,6 +141,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1615129133561" />
+    <state width="2027" height="305" key="GridCell.Tab.0.bottom" timestamp="1615369530810">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2027" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1615369530810" />
+    <state width="2027" height="305" key="GridCell.Tab.0.center" timestamp="1615369530809">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2027" height="305" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1615369530809" />
+    <state width="2027" height="305" key="GridCell.Tab.0.left" timestamp="1615369530809">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2027" height="305" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1615369530809" />
+    <state width="2027" height="305" key="GridCell.Tab.0.right" timestamp="1615369530810">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2027" height="305" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1615369530810" />
     <state x="625" y="167" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614294565614">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

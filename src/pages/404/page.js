@@ -1,14 +1,20 @@
 import PageTemplate from "../../ui/templates/page/page/page";
+import Helmet from "react-helmet";
 
 const links = [
 ];
 
+let title = "Page not found";
+
 export const NotFoundPage = (props) => (
     <>
+        <Helmet>
+            <title>{title}</title>
+        </Helmet>
        <PageTemplate
                 breadcrumbsLinks={links}
                 isFetching={false}
-                pageTitle={"Page not found"}
+                pageTitle={title}
                 pageContent={""}/>
     </>
 )
