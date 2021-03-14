@@ -7,7 +7,6 @@ export function RouteWithSubRoutes(route) {
             path={route.path}
             render={props => (
                 // pass the sub-routes down to keep nesting
-                // ПОНЯТЬ ЧТО ДЕЛАЕТ {...props}
                 <route.component {...props} state={route.state} routes={route.routes} />
             )}
         />

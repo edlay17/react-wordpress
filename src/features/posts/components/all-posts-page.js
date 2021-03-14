@@ -19,14 +19,9 @@ export const AllPostsPage = (props) => {
             <Helmet>
                 <title>{props.pageName}</title>
             </Helmet>
-            {isFetching ?
-                <LoadingHomepagePostsTemplate
-                    headerImage={props.image}
-                    pageName={props.pageName}/> :
-                <HomepagePostsTemplate
-                    headerImage={props.image}
-                    postsData={posts}
-                    pageName={props.pageName}/>
+            {isFetching
+                ? <LoadingHomepagePostsTemplate headerImage={props.image} pageName={props.pageName}/>
+                : <HomepagePostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName}/>
             }
         </>
     )}

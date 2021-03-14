@@ -4,10 +4,20 @@ const SET_POSTS = "setPosts";
 const SET_POSTS_FROM_SEARCH = "setPostsFromSearch";
 const POSTS_TOGGLE_IS_FETCHING = "postsToggleIsFetching";
 const SET_FOUND_POSTS_ADDITIONAL_DATA = "setFoundPostsAdditionalData";
+const SET_CATEGORY = "setCategory";
+const TOGGLE_IS_CATEGORY_FOUND = "toggleIsCategoryFound";
 
+const toggleIsCategoryFound = (isFound) => ({
+    type: TOGGLE_IS_CATEGORY_FOUND,
+    isFound
+})
 const setPostsFromSearch = (posts) => ({
     type: SET_POSTS_FROM_SEARCH,
     posts
+})
+const setCategory = (category) => ({
+    type: SET_CATEGORY,
+    category
 })
 const setPosts = (posts) => ({
     type: SET_POSTS,
@@ -23,68 +33,80 @@ const setFoundPostsAdditionalData = (data, elemIndex) => ({
     elemIndex
 })
 
-export const getPosts = (category) => (dispatch) => {
+export const getPosts = (category_slug) => async (dispatch) => {
     dispatch(postsToggleIsFetching(true));
-    PostAPI.getPosts(category).then(data=>{
+    const categories = await PostAPI.getCategoryName(category_slug);
+    if (categories.length > 0){
+        dispatch(toggleIsCategoryFound(true));
+        const category = categories[0].name;
+        dispatch(setCategory(category));
+        const data = await PostAPI.getPosts(category);
         dispatch(setPosts(data));
-        dispatch(postsToggleIsFetching(false));
-    })
+    }
+    else{
+        dispatch(toggleIsCategoryFound(false));
+    }
+    dispatch(postsToggleIsFetching(false));
 }
-export const getAllPosts = () => (dispatch) => {
+export const getAllPosts = () => async (dispatch) => {
     dispatch(postsToggleIsFetching(true));
-    PostAPI.getAllPosts().then(data=>{
-        dispatch(setPosts(data));
-        dispatch(postsToggleIsFetching(false));
-    })
+    const data = await PostAPI.getAllPosts();
+    dispatch(setPosts(data));
+    dispatch(postsToggleIsFetching(false));
 }
-export const getFoundPosts = (searchRequest) => (dispatch, getState) => {
+
+export const getFoundPosts = (searchRequest) => async (dispatch, getState) => {
     dispatch(postsToggleIsFetching(true));
-    PostAPI.getFoundPosts(searchRequest).then(data=>{
-        dispatch(setPostsFromSearch(data));
-        console.log(data);
-        if(data.length > 0){
-            getState().posts.postsData.map((elem, index) => {
-                PostAPI.getByQuery(elem.author_request).then(data=>{
-                    let authorName = data.name;
-                    let authorAvatar = data.avatar_urls["48"];
-                    PostAPI.getByQuery(elem.tags_request).then(data2=>{
-                        let tags = data2.map(elem => elem.name);
-                        if(elem.image_request !== ""){
-                            PostAPI.getByQuery(elem.image_request).then(data3=> {
-                                let imageSrc = data3[0].media_details["sizes"].medium_large.source_url;
-                                dispatch(setFoundPostsAdditionalData({
-                                    author: {authorName, authorAvatar},
-                                    imageSrc,
-                                    tags
-                                }, index))
-                                dispatch(postsToggleIsFetching(false));
-                            })
-                        }
-                        else{
-                            dispatch(setFoundPostsAdditionalData({
-                                author: {authorName, authorAvatar},
-                                imageSrc: "",
-                                tags
-                            }, index))
-                            dispatch(postsToggleIsFetching(false));
-                        }
-                    })
-                })
-            })
-        }
-        else dispatch(postsToggleIsFetching(false));
-    })
+    const foundPostsResponse = await PostAPI.getFoundPosts(searchRequest);
+    dispatch(setPostsFromSearch(foundPostsResponse));
+    const dataLength = getState().posts.postsData.length;
+    if(dataLength > 0) {
+        getState().posts.postsData.map( async (elem, index) => {
+            const authorData = await PostAPI.getByQuery(elem.author_request); // get author info
+            let authorName = authorData.name;
+            let authorAvatar = authorData.avatar_urls["48"]; // ПРОВЕРИТЬ ЕСЛИ ТЕГОВ НЕТ
+            const tagsData = await PostAPI.getByQuery(elem.tags_request); // get tags
+            let tags = tagsData.map(elem => elem.name);
+            let imageSrc;
+            if(elem.image_request !== "") { // if image not empty
+                let imageData = await PostAPI.getByQuery(elem.image_request); // get image
+                imageSrc = imageData.media_details["sizes"].medium_large.source_url;
+            }
+            else{
+                imageSrc = null;
+            }
+            dispatch(setFoundPostsAdditionalData({
+                author: {authorName, authorAvatar},
+                imageSrc,
+                tags
+            }, index))
+            if(index+1 === dataLength){
+                dispatch(postsToggleIsFetching(false));
+            }
+        })
+    }
+    else{
+        dispatch(postsToggleIsFetching(false));
+    }
 }
 
 let InitialState = {
     postsIsFetching: false,
-    postsData: [
-    ],
+    postsData: [],
+    isCategoryFound: true,
 };
 
 const postsReducer = (state = InitialState, action) => {
     let stateCopy;
     switch (action.type){
+        case TOGGLE_IS_CATEGORY_FOUND:
+            stateCopy={...state, isCategoryFound: action.isFound}
+            return stateCopy;
+            break;
+        case SET_CATEGORY:
+            stateCopy = {...state, categoryName: action.category}
+            return stateCopy;
+            break;
         case SET_POSTS:
             if(action.posts != []){
                 stateCopy = {...state, postsData: action.posts.map(elem => (
@@ -114,7 +136,7 @@ const postsReducer = (state = InitialState, action) => {
                 stateCopy = {...state, postsData: action.posts.map(elem => {
                         if (elem._embedded.self[0].type === "post") {
                             let imgReq;
-                            if(elem._embedded.self[0].featured_media != "0") imgReq = elem._embedded.self[0]._links["wp:attachment"][0].href;
+                            if(elem._embedded.self[0].featured_media > 0) imgReq = elem._embedded.self[0]._links["wp:featuredmedia"][0].href;
                             else imgReq = "";
                             return {
                                 id: elem._embedded.self[0].id,
@@ -125,7 +147,7 @@ const postsReducer = (state = InitialState, action) => {
                                 author: "",
                                 author_image_url: "",
                                 tags: [],
-                                image_url: "",
+                                image_url: null,
                                 author_request: elem._embedded.self[0]._links.author[0].href, // get a api link to get data
                                 image_request: imgReq, // get a api link to get data
                                 tags_request: elem._embedded.self[0]._links["wp:term"][1].href, // get a api link to get data

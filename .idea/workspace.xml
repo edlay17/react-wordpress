@@ -20,11 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc6436a8-8efb-46f4-a9d0-25f69130e1ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/single-page/components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/single-page/model/page-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/page/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/search-form/model/search-reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/search-form/сomponents/search-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/search-form/search-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/post/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/404/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/posts/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/posts/post/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts/post/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/search/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/search/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/organisms/footer/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/footer/footer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,17 +74,17 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wp-react\newproject\react-wordpress\src\pages\pages" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\pages\pages\about-me-page" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\features\header\search-form" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\features\header\search-form\сomponents" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wp-react\newproject\react-wordpress\src\features\posts\model" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\features\post" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wp-react\newproject\react-wordpress\src\features\header\search-form\сomponents" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\features\header" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\templates\homepage-posts\homepage-posts" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\organisms\post-cards\post-cards" />
     </key>
   </component>
   <component name="RunManager">
@@ -109,7 +128,7 @@
       <workItem from="1615323736855" duration="1107000" />
       <workItem from="1615450186204" duration="1331000" />
       <workItem from="1615543790057" duration="2015000" />
-      <workItem from="1615586720292" duration="5371000" />
+      <workItem from="1615586720292" duration="35799000" />
     </task>
     <servers />
   </component>

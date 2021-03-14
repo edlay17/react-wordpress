@@ -18,14 +18,9 @@ export const FoundPostsPage = (props) => {
             <Helmet>
                 <title>{props.pageName}</title>
             </Helmet>
-            {isFetching ?
-                <LoadingCategoryPosts
-                    headerImage={props.image}
-                    pageName={props.pageName}/> :
-                <CategoryPostsTemplate
-                    headerImage={props.image}
-                    postsData={posts}
-                    pageName={props.pageName}/>
+            {isFetching
+                ? <LoadingCategoryPosts headerImage={props.image} pageName={props.pageName}/>
+                : <CategoryPostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName}/>
             }
         </>
     )}

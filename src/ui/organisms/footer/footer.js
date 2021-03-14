@@ -28,7 +28,6 @@ export const FooterTemplate = (props) => {
     return(
             <footer className={classes.footer}>
                 <Container maxWidth="lg">
-                    <Typography variant="body2">It's my react-wordpress blog!</Typography>
                     <Link target="_blank" color="inherit" href="https://github.com/edlay17/react-wordpress">
                         github.com/edlay17
                     </Link>

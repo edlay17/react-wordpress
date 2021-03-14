@@ -1,6 +1,6 @@
 import './App.css';
 import {routes} from "./pages/index";
-import Header from "./features/header/index";
+import Header from "./features/header/header";
 import {MapRoutes} from "./lib/routes";
 import React from "react";
 import FooterTemplate from "./ui/organisms/footer/footer";

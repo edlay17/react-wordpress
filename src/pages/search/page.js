@@ -1,15 +1,15 @@
 import FoundPostsPage from "../../features/posts/components/found-posts-page";
 import forest from "../../include/images/forest.svg"
-import {useSelector} from "react-redux";
 import NotFoundPage from "../404/page";
+import {useParams} from "react-router-dom";
 
 export const SearchPostsPage = (props) => {
-    const searchText = useSelector(state => state.search.searchText);
+    let {request} = useParams();
 
     return (
         <>
-        {searchText.length > 0
-                ? <FoundPostsPage pageName={"Search for: " + searchText} searchRequest={searchText} image={forest}/>
+        {request.length > 0
+                ? <FoundPostsPage pageName={"Search for: " + request} searchRequest={request} image={forest}/>
                 : <NotFoundPage/>
         }
         </>

@@ -1,13 +1,10 @@
-import SearchInputWithIcon from "../../../../ui/molecules/search-input-with-icon/search-input-with-icon";
+import SearchInputWithIcon from "../../../ui/molecules/search-input-with-icon/search-input-with-icon";
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {setSearchText} from "../model/search-reducer"
 
 export const SearchForm = (props) => {
     let [value, setValue]=useState("");
     let history = useHistory();
-    const dispatch = useDispatch();
 
     let onChangeSearchText = (e) => {
         setValue(e.target.value);
@@ -16,9 +13,8 @@ export const SearchForm = (props) => {
         if(e.keyCode === 13){
             e.preventDefault();
             if(e.target.value !== ""){
-                dispatch(setSearchText(value));
                 setValue("");
-                history.push("/search");
+                history.push(`/search/${value}`);
             }
         }
     }

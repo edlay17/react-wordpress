@@ -1,8 +1,7 @@
 import PageTemplate from "../../ui/templates/page/page/page";
 import Helmet from "react-helmet";
 
-const links = [
-];
+const links = [];
 
 let title = "Page not found";
 

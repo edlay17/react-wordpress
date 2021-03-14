@@ -1,13 +1,14 @@
 import PostPage from "../../../features/post/components";
+import {useParams} from "react-router-dom";
 
 export const SinglePostPage = (props) => {
-    const links = [
-        {id: 2, linkAddress: "/posts", linkText: "Posts"},
-    ];
+    let {post_slug} = useParams();
+
+    const links = [];
 
     return (
         <>
-            <PostPage links={links}/>
+            <PostPage links={links} slug={post_slug}/>
         </>
 )}
 

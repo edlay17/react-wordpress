@@ -40,7 +40,6 @@ export const PostCard = (props) => {
     const tags = props.tags.map((tag) =>
         <Chip size="small" label={tag} />
     );
-
     return(
         <Card className={classes.root}>
             <CardActionArea>
@@ -74,7 +73,7 @@ export const PostCard = (props) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button component={NavLink} to={`/posts/${props.slug}`} size="small" color="primary">
+                <Button component={NavLink} to={`/post/${props.slug}`} size="small" color="primary">
                     Learn More
                 </Button>
             </CardActions>

@@ -10,15 +10,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import {Provider} from "react-redux";
 
 import {applyMiddleware, combineReducers, createStore} from 'redux';
+import thunk from "redux-thunk";
 import postsReducer from "./features/posts/model/posts-reducer";
 import postReducer from "./features/post/model/post-reducer";
-import thunk from "redux-thunk";
-import searchReducer from "./features/header/search-form/model/search-reducer";
+import pageReducer from "./features/single-page/model/page-reducer";
 
 let reducers = combineReducers({
     posts: postsReducer,
     post: postReducer,
-    search: searchReducer,
+    page: pageReducer,
 });
 let store = createStore(
     reducers,

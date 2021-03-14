@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from "@material-ui/core/Box";
 import LogoWithNavLink from "../../ui/atoms/logo/logo";
 import MenuLink from "../../ui/atoms/menu-link/menu-link";
-import SearchForm from "./search-form/сomponents/search-form";
+import SearchForm from "./search-form/search-form";
 
 const useStyles = makeStyles((theme) => ({
     toolBar: {

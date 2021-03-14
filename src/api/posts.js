@@ -9,6 +9,9 @@ export const PostAPI = {
     getPosts: (category) =>{
         return instance.get(`posts?category_name=${category}&_embed&_fields=author,id,slug,excerpt,title,date,tags,featured_media,_links,_embedded`).then(response => response.data);
     },
+    getCategoryName: (categorySlug) => {
+        return instance.get(`categories?slug=${categorySlug}`).then(response => response.data);
+    },
     getAllPosts: () => {
         return instance.get(`posts?_embed&_fields=author,id,slug,excerpt,title,date,tags,featured_media,_links,_embedded`).then(response => response.data);
     },
@@ -25,6 +28,6 @@ export const PostAPI = {
 
 export const PageAPI = {
     getPage: (slug) =>{
-        return instance.get(`posts/?slug=${slug}&_fields=id,content,title`).then(response => response.data);
+        return instance.get(`pages/?slug=${slug}&_fields=id,content,title`).then(response => response.data);
     },
 }

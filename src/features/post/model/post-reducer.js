@@ -16,17 +16,16 @@ const postToggleIsFetching = (isFetching) => ({
     isFetching
 })
 
-export const getPost = (slug) => (dispatch) => {
+export const getPost = (slug) => async (dispatch) => {
     dispatch(postToggleIsFetching(true));
-    PostAPI.getPost(slug).then(data=>{
-        if(data.length === 0) {
-            dispatch(setEmptyPost());
-        }
-        else{
-            dispatch(setPost(data));
-        }
-        dispatch(postToggleIsFetching(false));
-    })
+    const data = await PostAPI.getPost(slug);
+    if(data.length === 0) {
+        dispatch(setEmptyPost());
+    }
+    else{
+        dispatch(setPost(data));
+    }
+    dispatch(postToggleIsFetching(false));
 }
 
 let InitialState = {
@@ -36,7 +35,9 @@ let InitialState = {
         id: 1,
         title: "",
         content: "",
-        comments: []
+        categoryName: "about projects",
+        categorySlug: "about-projects",
+        comments: [],
     }
 };
 
@@ -45,6 +46,7 @@ const postReducer = (state = InitialState, action) => {
     switch (action.type){
         case SET_POST:
             stateCopy = {...state, currentPostData: {
+                    ...state.currentPostData,
                     isEmpty: false,
                     id: action.post[0].id,
                     title: action.post[0].title.rendered,
@@ -55,6 +57,7 @@ const postReducer = (state = InitialState, action) => {
             break;
         case SET_EMPTY_POST:
             stateCopy = {...state, currentPostData: {
+                    ...state.currentPostData,
                     isEmpty: true,
                     id: "",
                     title: "",
