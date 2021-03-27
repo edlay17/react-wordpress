@@ -7,17 +7,24 @@ import Box from "@material-ui/core/Box";
 import LogoWithNavLink from "../../ui/atoms/logo/logo";
 import MenuLink from "../../ui/atoms/menu-link/menu-link";
 import SearchForm from "./search-form/search-form";
+import {useDispatch, useSelector} from "react-redux";
+import {toggleThemeType} from "../globalSettings/model/global-reducer";
+import IconButton from "@material-ui/core/IconButton";
+import {Brightness3, BrightnessLow} from "@material-ui/icons";
+import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     toolBar: {
         justifyContent: "space-between",
     },
     appBar: {
-        backgroundColor: "#2b2d31",
-    }
+        backgroundColor: theme.palette.primary.dark,
+    },
 }));
 
 export const HeaderTemplate = (props) => {
+    const dispatch = useDispatch();
+    const theme_type = useSelector(state => state.global.theme_type)
     const classes = useStyles();
     const menuLinks = links.map((link) =>
         <MenuLink linkTo={link.linkAddress} linkText={link.linkText} key={link.id}/>
@@ -30,6 +37,15 @@ export const HeaderTemplate = (props) => {
                     <Box>
                         {menuLinks}
                     </Box>
+                    <IconButton
+                        onClick={() => {theme_type === "dark" ? dispatch(toggleThemeType("light")) : dispatch(toggleThemeType("dark"))}}
+                        aria-label="delete"
+                    >
+                        {theme_type === "dark"
+                            ? <Brightness3 style={{ color: grey[100] }}/>
+                            : <BrightnessLow style={{ color: grey[100] }}/>
+                        }
+                    </IconButton>
                     <SearchForm/>
                 </Toolbar>
             </Container>

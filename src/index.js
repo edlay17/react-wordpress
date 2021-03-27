@@ -8,17 +8,22 @@ import {
 } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {Provider} from "react-redux";
-
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import {
+    applyMiddleware,
+    combineReducers,
+    createStore
+} from 'redux';
 import thunk from "redux-thunk";
 import postsReducer from "./features/posts/model/posts-reducer";
 import postReducer from "./features/post/model/post-reducer";
 import pageReducer from "./features/single-page/model/page-reducer";
+import globalReducer from "./features/globalSettings/model/global-reducer";
 
 let reducers = combineReducers({
     posts: postsReducer,
     post: postReducer,
     page: pageReducer,
+    global: globalReducer,
 });
 let store = createStore(
     reducers,
@@ -30,7 +35,7 @@ ReactDOM.render(
       <Router>
           <CssBaseline />
           <Provider store={store}>
-              <App store={store}/>
+              <App state={store.getState()}/>
           </Provider>
       </Router>
   </React.StrictMode>,

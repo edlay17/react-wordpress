@@ -1,17 +1,22 @@
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
-import BreadcrumbsNavigation from "../../../molecules/breadcrumbs/breadcrumbs";
+import BreadcrumbsNavigation from "../../../molecules/breadcrumbs/breadcrumbs/breadcrumbs";
+import CommentCard from "../../../molecules/comment/comment/comment";
+import SinglePageTitle from "../../../atoms/single-page-title/single-page-title/single-page-title";
+import Content from "../../../atoms/content/content/content";
 
 const useStyles = makeStyles((theme) => ({
     contentWrapper: {
-        marginTop: theme.spacing(3)
+        marginTop: theme.spacing(3),
+        marginBottom: theme.spacing(7)
     },
     pageWrapper: {
         marginTop: theme.spacing(3)
     },
     content: {
         marginTop: theme.spacing(4),
+        marginBottom: theme.spacing(10),
         fontSize: theme.spacing(2.7),
         lineHeight: theme.spacing(0.21),
         '& img': {
@@ -36,14 +41,8 @@ export const PageTemplate = (props) => {
             <Container maxWidth="lg" className={classes.pageWrapper}>
                 <BreadcrumbsNavigation breadLinks={props.breadcrumbsLinks} currentPageName={props.pageTitle}/>
                 <Container maxWidth="lg" className={classes.contentWrapper}>
-                    <Typography align="center" variant="h3" component="h1">
-                        {props.pageTitle}
-                    </Typography>
-                    <Container maxWidth="md">
-                        <div className={classes.content}>
-                            <div className="question-text" dangerouslySetInnerHTML={{__html: props.pageContent}}/>
-                        </div>
-                    </Container>
+                    <SinglePageTitle title={props.pageTitle}/>
+                    <Content content={props.pageContent}/>
                 </Container>
             </Container>
         </div>

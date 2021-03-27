@@ -1,6 +1,7 @@
 import Grid from '@material-ui/core/Grid';
 import PostCard from "../../../molecules/post-card/post-card/post-card";
 import {makeStyles} from "@material-ui/core/styles";
+import Pagination from "@material-ui/lab/Pagination";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -9,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const PostCards = (props) => {
-
     const postsItems = props.postsData.map((post) =>
         <Grid item md={4} sm={12}>
             <PostCard
@@ -26,10 +26,18 @@ export const PostCards = (props) => {
         </Grid>
     );
     const classes = useStyles();
+    const handleChange = (event, value) => {
+        props.changePage(value);
+    };
     return (
-        <Grid container spacing={3} className={classes.root}>
-            {postsItems}
-        </Grid>
+            <Grid container spacing={3} className={classes.root}>
+                {postsItems}
+                {props.pagesCount > 1 &&
+                    <Grid item md={12}>
+                        <Pagination count={props.pagesCount} page={props.currentPage} variant="outlined" onChange={handleChange} showFirstButton showLastButton/>
+                    </Grid>
+                }
+            </Grid>
     )}
 
 export default PostCards;

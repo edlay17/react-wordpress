@@ -3,12 +3,13 @@ import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import {emphasize, makeStyles, withStyles} from "@material-ui/core/styles";
 import Chip from "@material-ui/core/Chip";
 import {Link as NavLink} from "react-router-dom";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 const StyledBreadcrumb = withStyles((theme) => ({
     root: {
-        backgroundColor: theme.palette.grey[100],
+        color: theme.palette.elements.text,
+        backgroundColor: theme.palette.elements.secondary,
         height: theme.spacing(3),
-        color: theme.palette.grey[800],
         fontWeight: theme.typography.fontWeightRegular,
         '&:hover, &:focus': {
             backgroundColor: theme.palette.grey[300],
@@ -19,24 +20,26 @@ const StyledBreadcrumb = withStyles((theme) => ({
             backgroundColor: emphasize(theme.palette.grey[300], 0.12),
         },
     },
+    icon: {
+        color: theme.palette.elements.text
+    }
 }))(Chip);
 
 const useStyles = makeStyles((theme) => ({
     breadCrumbs: {
-        marginBottom: theme.spacing(3)
+        marginBottom: theme.spacing(3),
+        color: theme.palette.elements.text,
+    },
+    chipsSkeleton: {
+        borderRadius: theme.spacing(2),
+        width: theme.spacing(9),
+        height: theme.spacing(3),
+        backgroundColor: theme.palette.elements.secondary,
     },
 }));
 
-function handleClick(event) {
-    event.preventDefault();
-}
-
-export const BreadcrumbsNavigation = (props) => {
+export const LoadingBreadcrumbsNavigation = (props) => {
     const classes = useStyles();
-
-    const breadLinks = props.breadLinks.map((link) =>
-        <StyledBreadcrumb component={NavLink} to={link.linkAddress} label={link.linkText} key={link.key}/>
-    );
 
     return(
         <Breadcrumbs aria-label="breadcrumb" className={classes.breadCrumbs}>
@@ -44,12 +47,12 @@ export const BreadcrumbsNavigation = (props) => {
                 component={NavLink}
                 to="/"
                 label="Home"
-                icon={<HomeIcon fontSize="small" />}
+                icon={<HomeIcon className={classes.icon} fontSize="small" />}
             />
-            {breadLinks}
-            <StyledBreadcrumb label={props.currentPageName} onClick={handleClick}/>
+            <Skeleton variant="rect" className={classes.chipsSkeleton}/>
+            <Skeleton variant="rect" className={classes.chipsSkeleton}/>
         </Breadcrumbs>
     )
 }
 
-export default BreadcrumbsNavigation;
+export default LoadingBreadcrumbsNavigation;

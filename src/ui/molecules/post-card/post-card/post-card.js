@@ -1,8 +1,6 @@
 import {makeStyles} from "@material-ui/core/styles";
-import CardActions from "@material-ui/core/CardActions";
 import CardMedia from "@material-ui/core/CardMedia";
 import Card from "@material-ui/core/Card";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -12,9 +10,6 @@ import Chip from "@material-ui/core/Chip";
 import {NavLink} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        maxWidth: 480,
-    },
     image: {
         filter: "grayscale(30%)",
         "&:hover": {
@@ -22,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     avatar: {
-        backgroundColor: "darkblue"
+        backgroundColor: theme.palette.primary.main
     },
     tags: {
         marginTop: theme.spacing(2.5),
@@ -31,7 +26,24 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap',
         '& > *': {
             margin: theme.spacing(0.5),
+            backgroundColor: theme.palette.elements.secondary,
+            color: theme.palette.elements.text
         },
+    },
+    header: {
+        color: theme.palette.elements.text,
+        '& .MuiCardHeader-subheader': {
+            color: theme.palette.elements.secondaryText,
+        }
+    },
+    root: {
+        backgroundColor: theme.palette.elements.main,
+    },
+    title: {
+        color: theme.palette.elements.text,
+    },
+    excerpt: {
+        color: theme.palette.elements.secondaryText,
     }
 }));
 
@@ -42,8 +54,9 @@ export const PostCard = (props) => {
     );
     return(
         <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea component={NavLink} to={`/post/${props.slug}`}>
                 <CardHeader
+                    className={classes.header}
                     avatar={
                         <Avatar aria-label="recipe" src={props.author_image} className={classes.avatar}>
                             E
@@ -61,10 +74,10 @@ export const PostCard = (props) => {
                     className={classes.image}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
                         {props.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="p" className={classes.excerpt}>
                         {props.excerpt}
                     </Typography>
                     <div className={classes.tags}>
@@ -72,11 +85,6 @@ export const PostCard = (props) => {
                     </div>
                 </CardContent>
             </CardActionArea>
-            <CardActions>
-                <Button component={NavLink} to={`/post/${props.slug}`} size="small" color="primary">
-                    Learn More
-                </Button>
-            </CardActions>
         </Card>
     )
 }

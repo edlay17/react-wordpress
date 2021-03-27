@@ -3,32 +3,44 @@ import LoadingCategoryPostsTemplate from "../../../ui/templates/category-posts/l
 import {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
-import {getPosts} from "../model/posts-reducer"
-import {Redirect} from "react-router-dom";
+import {getPosts, resetPosts} from "../model/posts-reducer"
+import {Redirect, useHistory} from "react-router-dom";
 
 export const CategoryPostsPage = (props) => {
+    let history = useHistory();
+    const [isNotFound, toggleIsNotFound] = useState(false);
+
     const posts = useSelector(state => state.posts.postsData);
     const isFetching = useSelector(state => state.posts.postsIsFetching);
     const pageName = useSelector(state => state.posts.categoryName);
+    const pagesCount = useSelector(state => state.posts.postsPagesCount);
+    const currentPage = useSelector(state => state.posts.postsPage);
     const isCategoryFound = useSelector(state => state.posts.isCategoryFound);
     const dispatch = useDispatch();
-    const [isNotFound, toggleIsNotFound] = useState(false);
+
     useEffect(() => {
-        dispatch(getPosts(props.categorySlug));
-    }, [props.categorySlug]);
+        dispatch(getPosts(props.categorySlug, props.pageNum));
+        return function cleanup() {
+            dispatch(resetPosts());
+        };
+    }, [props.categorySlug, props.pageNum]);
     useEffect(() => {
         toggleIsNotFound(!isCategoryFound);
     }, [isCategoryFound]);
+
+    const changePage = (pageNum) => {
+        history.push(`/posts/${props.categorySlug}/${pageNum}`);
+    }
 
     return (
         <>
             <Helmet>
                 <title>{pageName}</title>
             </Helmet>
-            {!isFetching && isNotFound && <Redirect to="/404" />}
+            {isNotFound && <Redirect to="/404" />}
             {isFetching
-                ? <LoadingCategoryPostsTemplate headerImage={props.image} pageName={pageName}/>
-                : <CategoryPostsTemplate headerImage={props.image} postsData={posts} pageName={pageName}/>
+                ? <LoadingCategoryPostsTemplate headerImage={props.image}/>
+                : <CategoryPostsTemplate headerImage={props.image} postsData={posts} pageName={pageName} pagesCount={pagesCount} currentPage={currentPage} changePage={changePage}/>
             }
         </>
     )}

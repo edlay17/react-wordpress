@@ -3,6 +3,7 @@ import {PageAPI} from "../../../api/posts";
 const SET_PAGE = "setPage";
 const SET_EMPTY_PAGE = "setEmptyPage";
 const PAGE_TOGGLE_IS_FETCHING = "pageToggleIsFetching";
+const RESET_PAGE = "resetPage";
 
 const setPage = (page) => ({
     type: SET_PAGE,
@@ -11,7 +12,10 @@ const setPage = (page) => ({
 const setEmptyPage = () => ({
     type: SET_EMPTY_PAGE
 })
-const pageToggleIsFetching = (isFetching) => ({
+export const resetPage = () => ({
+    type: RESET_PAGE
+})
+export const pageToggleIsFetching = (isFetching) => ({
     type: PAGE_TOGGLE_IS_FETCHING,
     isFetching
 })
@@ -29,7 +33,7 @@ export const getPage = (slug) => async (dispatch) => {
 }
 
 let InitialState = {
-    pageIsFetching: false,
+    pageIsFetching: true,
     currentPageData: {
         isEmpty: false,
         id: 1,
@@ -43,7 +47,9 @@ const pageReducer = (state = InitialState, action) => {
     let stateCopy;
     switch (action.type){
         case SET_PAGE:
-            stateCopy = {...state, currentPageData: {
+            stateCopy = {
+                ...state,
+                currentPageData: {
                     isEmpty: false,
                     id: action.page[0].id,
                     title: action.page[0].title.rendered,
@@ -53,7 +59,9 @@ const pageReducer = (state = InitialState, action) => {
             return stateCopy;
             break;
         case SET_EMPTY_PAGE:
-            stateCopy = {...state, currentPageData: {
+            stateCopy = {
+                ...state,
+                currentPageData: {
                     isEmpty: true,
                     id: "",
                     title: "",
@@ -62,8 +70,18 @@ const pageReducer = (state = InitialState, action) => {
             };
             return stateCopy;
             break;
+        case RESET_PAGE:
+            stateCopy = {
+                ...state,
+                pageIsFetching: true
+            };
+            return stateCopy;
+            break;
         case PAGE_TOGGLE_IS_FETCHING:
-            stateCopy = {...state, pageIsFetching: action.isFetching};
+            stateCopy = {
+                ...state,
+                pageIsFetching: action.isFetching
+            };
             return stateCopy;
             break;
         default:

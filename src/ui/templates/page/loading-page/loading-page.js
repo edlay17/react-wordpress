@@ -1,8 +1,9 @@
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
-import BreadcrumbsNavigation from "../../../molecules/breadcrumbs/breadcrumbs";
-import Skeleton from '@material-ui/lab/Skeleton'
+import LoadingBreadcrumbsNavigation from "../../../molecules/breadcrumbs/loading-breadcrumbs/loading-breadcrumbs";
+import LoadingSinglePageTitle
+    from "../../../atoms/single-page-title/loading-single-page-title/loading-single-page-title";
+import LoadingContent from "../../../atoms/content/loading-content/loading-content";
 
 const useStyles = makeStyles((theme) => ({
     contentWrapper: {
@@ -15,25 +16,20 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(4)
     },
     contentSkeleton: {
-        height: theme.spacing(100),
+        height: theme.spacing(70),
     }
 }));
+console.log("da");
 
 export const LoadingPageTemplate = (props) => {
     const classes = useStyles();
     return (
         <div>
             <Container maxWidth="lg" className={classes.pageWrapper}>
-                <BreadcrumbsNavigation breadLinks={props.breadcrumbsLinks} currentPageName={""}/>
+                <LoadingBreadcrumbsNavigation/>
                 <Container maxWidth="lg" className={classes.contentWrapper}>
-                    <Typography align="center" variant="h3" component="h1">
-                        <Skeleton/>
-                    </Typography>
-                    <Container maxWidth="md">
-                        <div className={classes.content}>
-                            <Skeleton animation="wave" variant="rect" className={classes.contentSkeleton}/>
-                        </div>
-                    </Container>
+                    <LoadingSinglePageTitle/>
+                    <LoadingContent/>
                 </Container>
             </Container>
         </div>

@@ -12,7 +12,7 @@ export const routes = [
         component: NotFoundPage
     },
     {
-        path: "/",
+        path: "/:pageNum?",
         exact: true,
         component: Homepage,
     },
@@ -22,7 +22,7 @@ export const routes = [
         component: SinglePage
     },
     {
-        path: "/posts/:category_slug",
+        path: "/posts/:category_slug/:pageNum?",
         exact: true,
         component: CategoryPage
     },
@@ -32,7 +32,7 @@ export const routes = [
         component: SinglePostPage
     },
     {
-        path: "/search/:request",
+        path: "/search/:request/:pageNum?",
         exact: true,
         component: SearchPostsPage
     },
@@ -43,7 +43,7 @@ export const routes = [
 
 // header menu links
 export const links = [
-    {id: 1, linkAddress: "/posts/about-projects", linkText: "About projects"},
+    {id: 1, linkAddress: "/posts/about-projects", linkText: "Projects"},
     {id: 2, linkAddress: "/page/about-me", linkText: "About me (CV)"},
     {id: 3, linkAddress: "/post/react-wordpress-blog", linkText: "Contacts"},
     {id: 4, linkAddress: "/post/333", linkText: "Setting"},

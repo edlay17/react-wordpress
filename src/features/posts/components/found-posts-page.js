@@ -1,17 +1,30 @@
-import CategoryPostsTemplate from "../../../ui/templates/category-posts/category-posts/category-posts";
-import LoadingCategoryPosts from "../../../ui/templates/category-posts/loading-category-posts/loading-category-posts";
 import {useEffect} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
-import {getFoundPosts} from "../model/posts-reducer"
+import {getFoundPosts, resetPosts} from "../model/posts-reducer"
+import LoadingFoundPostsTemplate from "../../../ui/templates/found-posts/loading-found-posts/loading-found-posts";
+import FoundPostsTemplate from "../../../ui/templates/found-posts/found-posts/found-posts";
+import {useHistory} from "react-router-dom";
 
 export const FoundPostsPage = (props) => {
-    useEffect(() => {
-        dispatch(getFoundPosts(props.searchRequest));
-    }, [props.searchRequest]);
+    let history = useHistory();
+
     const posts = useSelector(state => state.posts.postsData);
     const isFetching = useSelector(state => state.posts.postsIsFetching);
+    const pagesCount = useSelector(state => state.posts.postsPagesCount);
+    const currentPage = useSelector(state => state.posts.postsPage);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getFoundPosts(props.searchRequest, props.pageNum));
+        return function cleanup() {
+            dispatch(resetPosts());
+        };
+    }, [props.searchRequest, props.pageNum]);
+
+    const changePage = (pageNum) => {
+        history.push(`/search/${props.searchRequest}/${pageNum}`);
+    }
 
     return (
         <>
@@ -19,8 +32,8 @@ export const FoundPostsPage = (props) => {
                 <title>{props.pageName}</title>
             </Helmet>
             {isFetching
-                ? <LoadingCategoryPosts headerImage={props.image} pageName={props.pageName}/>
-                : <CategoryPostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName}/>
+                ? <LoadingFoundPostsTemplate headerImage={props.image}/>
+                : <FoundPostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName} pagesCount={pagesCount} currentPage={currentPage} changePage={changePage}/>
             }
         </>
     )}

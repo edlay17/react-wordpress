@@ -1,4 +1,4 @@
-import PostPage from "../../../features/post/components";
+import Post from "../../../features/post/components";
 import {useParams} from "react-router-dom";
 
 export const SinglePostPage = (props) => {
@@ -8,7 +8,7 @@ export const SinglePostPage = (props) => {
 
     return (
         <>
-            <PostPage links={links} slug={post_slug}/>
+            <Post links={links} slug={post_slug}/>
         </>
 )}
 

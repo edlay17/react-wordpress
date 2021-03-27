@@ -1,12 +1,12 @@
-import PageTemplate from "../../../ui/templates/page/page/page";
-import LoadingPageTemplate from "../../../ui/templates/page/loading-page/loading-page";
+import PostTemplate from "./post";
+import LoadingPostTemplate from "../../../ui/templates/post/loading-post/loading-post";
 import {Redirect} from "react-router-dom";
 import {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
-import {getPost} from "../model/post-reducer"
+import {getPost, resetPost} from "../model/post-reducer"
 
-export const PostPage = (props) => {
+export const Post = (props) => {
     const currentPost = useSelector(state => state.post.currentPostData);
     const isFetching = useSelector(state => state.post.postIsFetching);
     const dispatch = useDispatch();
@@ -16,6 +16,9 @@ export const PostPage = (props) => {
     }, [currentPost.isEmpty]);
     useEffect(() => {
         dispatch(getPost(props.slug));
+        return function cleanup() {
+            dispatch(resetPost(props.slug));
+        };
     }, [props.slug]);
     let lastLinksId;
     if(props.links.length>0)lastLinksId = props.links[props.links.length-1].id + 1;
@@ -29,10 +32,11 @@ export const PostPage = (props) => {
             </Helmet>
             {!isFetching && isEmpty && <Redirect to="/404" />}
             {isFetching
-                ? <LoadingPageTemplate
+                ? <LoadingPostTemplate
                     breadcrumbsLinks={links}
                     pageTitle={""}/>
-                : <PageTemplate
+                : <PostTemplate
+                    comments={currentPost.comments}
                     breadcrumbsLinks={links}
                     pageTitle={currentPost.title}
                     pageContent={currentPost.content}/>
@@ -40,4 +44,4 @@ export const PostPage = (props) => {
         </>
     )}
 
-export default PostPage;
+export default Post;

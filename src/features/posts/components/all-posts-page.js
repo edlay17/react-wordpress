@@ -1,27 +1,46 @@
 import LoadingHomepagePostsTemplate
     from "../../../ui/templates/homepage-posts/loading-homepage-posts/loading-homepage-posts";
 import HomepagePostsTemplate from "../../../ui/templates/homepage-posts/homepage-posts/homepage-posts";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
-import {getAllPosts} from "../model/posts-reducer"
+import {getAllPosts, resetPosts} from "../model/posts-reducer"
+import {Redirect, useHistory} from "react-router-dom";
 
 export const AllPostsPage = (props) => {
-    useEffect(() => {
-        dispatch(getAllPosts());
-    }, []);
+    let history = useHistory();
+    const [isNotFound, toggleIsNotFound] = useState(false);
+
+    const isCategoryFound = useSelector(state => state.posts.isCategoryFound);
     const posts = useSelector(state => state.posts.postsData);
     const isFetching = useSelector(state => state.posts.postsIsFetching);
+    const pagesCount = useSelector(state => state.posts.postsPagesCount);
+    const currentPage = useSelector(state => state.posts.postsPage);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllPosts(props.pageNum));
+        return function cleanup() {
+            dispatch(resetPosts());
+        };
+    }, [props.pageNum]);
+    useEffect(() => {
+        toggleIsNotFound(!isCategoryFound);
+    }, [isCategoryFound]);
+
+    const changePage = (pageNum) => {
+        history.push(`/${pageNum}`);
+    }
 
     return (
         <>
             <Helmet>
                 <title>{props.pageName}</title>
             </Helmet>
+            {isNotFound && <Redirect to="/404" />}
             {isFetching
-                ? <LoadingHomepagePostsTemplate headerImage={props.image} pageName={props.pageName}/>
-                : <HomepagePostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName}/>
+                ? <LoadingHomepagePostsTemplate headerImage={props.image}/>
+                : <HomepagePostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName} pagesCount={pagesCount} currentPage={currentPage} changePage={changePage}/>
             }
         </>
     )}

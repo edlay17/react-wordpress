@@ -4,7 +4,7 @@ import {Redirect} from "react-router-dom";
 import {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
-import {getPage} from "../model/page-reducer"
+import {getPage, resetPage} from "../model/page-reducer"
 
 export const Page = (props) => {
     const currentPage = useSelector(state => state.page.currentPageData);
@@ -13,11 +13,15 @@ export const Page = (props) => {
     const [isEmpty, toggleIsEmpty] = useState(false);
     useEffect(() => {
         dispatch(getPage(props.slug));
+        return function cleanup() {
+            dispatch(resetPage());
+        };
     }, [props.slug]);
     useEffect(() => {
         toggleIsEmpty(currentPage.isEmpty);
     }, [currentPage.isEmpty]);
 
+    debugger;
     return (
         <>
             <Helmet>
