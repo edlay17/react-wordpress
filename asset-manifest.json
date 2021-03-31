@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-wordpress/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/react-wordpress/static/js/main.02f147da.chunk.js",
+    "main.js.map": "/react-wordpress/static/js/main.02f147da.chunk.js.map",
+    "runtime-main.js": "/react-wordpress/static/js/runtime-main.dfe7b9f4.js",
+    "runtime-main.js.map": "/react-wordpress/static/js/runtime-main.dfe7b9f4.js.map",
+    "static/js/2.c85d3aca.chunk.js": "/react-wordpress/static/js/2.c85d3aca.chunk.js",
+    "static/js/2.c85d3aca.chunk.js.map": "/react-wordpress/static/js/2.c85d3aca.chunk.js.map",
+    "static/js/3.50d08e96.chunk.js": "/react-wordpress/static/js/3.50d08e96.chunk.js",
+    "static/js/3.50d08e96.chunk.js.map": "/react-wordpress/static/js/3.50d08e96.chunk.js.map",
+    "index.html": "/react-wordpress/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/react-wordpress/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.c85d3aca.chunk.js.LICENSE.txt": "/react-wordpress/static/js/2.c85d3aca.chunk.js.LICENSE.txt",
+    "static/media/forest.d3b3a05b.jpeg": "/react-wordpress/static/media/forest.d3b3a05b.jpeg",
+    "static/media/gory.0dc798df.png": "/react-wordpress/static/media/gory.0dc798df.png",
+    "static/media/ocean.54e5e1bb.jpg": "/react-wordpress/static/media/ocean.54e5e1bb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dfe7b9f4.js",
+    "static/js/2.c85d3aca.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.02f147da.chunk.js"
+  ]
+}
