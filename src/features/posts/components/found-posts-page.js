@@ -9,10 +9,10 @@ import {useHistory} from "react-router-dom";
 export const FoundPostsPage = (props) => {
     let history = useHistory();
 
+    const postsPerPage = useSelector(state => state.posts.postsPerPage);
     const posts = useSelector(state => state.posts.postsData);
     const isFetching = useSelector(state => state.posts.postsIsFetching);
     const pagesCount = useSelector(state => state.posts.postsPagesCount);
-    const currentPage = useSelector(state => state.posts.postsPage);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -32,8 +32,8 @@ export const FoundPostsPage = (props) => {
                 <title>{props.pageName}</title>
             </Helmet>
             {isFetching
-                ? <LoadingFoundPostsTemplate headerImage={props.image}/>
-                : <FoundPostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName} pagesCount={pagesCount} currentPage={currentPage} changePage={changePage}/>
+                ? <LoadingFoundPostsTemplate postsPerPage={postsPerPage} headerImage={props.image}/>
+                : <FoundPostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName} pagesCount={pagesCount} currentPage={props.pageNum} changePage={changePage}/>
             }
         </>
     )}

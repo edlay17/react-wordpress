@@ -13,7 +13,7 @@ export const LoadingCategoryPostsTemplate = (props) => {
                 <Container maxWidth="lg">
                     <LoadingBreadcrumbsNavigation/>
                     <LoadingPageTitle/>
-                    <LoadingPostCards/>
+                    <LoadingPostCards count={props.postsPerPage}/>
                 </Container>
             </Grid>
         </Grid>

@@ -20,60 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc6436a8-8efb-46f4-a9d0-25f69130e1ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/globalSettings/model/global-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/post/components/add-comment-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/post/components/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/theme-options/with-theme-hok.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/images/forest.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/atoms/content/content/content.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/atoms/content/loading-content/loading-content.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/atoms/page-title/page-title/page-title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/atoms/single-page-title/loading-single-page-title/loading-single-page-title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/atoms/single-page-title/single-page-title/single-page-title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/molecules/breadcrumbs/loading-breadcrumbs/loading-breadcrumbs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/molecules/comment/comment/comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/molecules/comment/loading-comment/loading-comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/organisms/comments-list/comments-list/comments-list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/organisms/comments-list/loading-comments-list/loading-comments-list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/templates/found-posts/found-posts/found-posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/templates/found-posts/loading-found-posts/loading-found-posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/templates/post/loading-post/loading-post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/templates/post/post/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/theme-options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/header/header-menu/header-menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/header/hide-on-scroll/hide-on-scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/header/toggle-theme/toggle-theme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/globalSettings/model/global-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/globalSettings/model/global-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/post/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/post/components/add-comment-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/components/add-comment-form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/single-page/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/single-page/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/single-page/model/page-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/single-page/model/page-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/images/forest.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/theme-options/with-theme-hok.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/theme-options/with-theme-hok.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/posts/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/posts/post/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts/post/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/search/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/search/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/atoms/page-title/page-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/atoms/page-title/loading-page-title/loading-page-title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/breadcrumbs/breadcrumbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/breadcrumbs/breadcrumbs/breadcrumbs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/post-card/loading-post-card/loading-post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/loading-post-card/loading-post-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/post-card/post-card/post-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/organisms/footer/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/footer/footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/molecules/search-input-with-icon/search-input-with-icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/search-input-with-icon/search-input-with-icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/category-posts/category-posts/category-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/category-posts/category-posts/category-posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/templates/category-posts/loading-category-posts/loading-category-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/category-posts/loading-category-posts/loading-category-posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/templates/found-posts/loading-found-posts/loading-found-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/found-posts/loading-found-posts/loading-found-posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/templates/homepage-posts/homepage-posts/homepage-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/homepage-posts/homepage-posts/homepage-posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/templates/homepage-posts/loading-homepage-posts/loading-homepage-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/homepage-posts/loading-homepage-posts/loading-homepage-posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/page/loading-page/loading-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/page/loading-page/loading-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/templates/page/page/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/page/page/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,19 +76,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\atoms\page-title\loading-page-title" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\molecules\breadcrumbs\loading-breadcrumbs" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\features\posts\model" />
-      <recent name="C:\wp-react\newproject\react-wordpress\src\features\post" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wp-react\newproject\react-wordpress\src\ui\atoms" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\ui\atoms\page-title\page-title" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\ui\molecules\breadcrumbs\breadcrumbs" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\pages\pages" />
       <recent name="C:\wp-react\newproject\react-wordpress\src\pages\pages\about-me-page" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wp-react\newproject\react-wordpress\src\include\images" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\atoms\page-title\loading-page-title" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\ui\molecules\breadcrumbs\loading-breadcrumbs" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\features\posts\model" />
+      <recent name="C:\wp-react\newproject\react-wordpress\src\features\post" />
     </key>
   </component>
   <component name="RunManager">
@@ -167,7 +139,8 @@
       <workItem from="1616151818884" duration="909000" />
       <workItem from="1616191028107" duration="6087000" />
       <workItem from="1616200975692" duration="8795000" />
-      <workItem from="1616427319537" duration="67145000" />
+      <workItem from="1616427319537" duration="87390000" />
+      <workItem from="1617019130699" duration="18965000" />
     </task>
     <servers />
   </component>
@@ -215,6 +188,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2027" height="767" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1616674049197" />
+    <state x="800" y="259" key="RollbackChangesDialog" timestamp="1616969471555">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="800" y="259" key="RollbackChangesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1616969471555" />
     <state x="625" y="167" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614294565614">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

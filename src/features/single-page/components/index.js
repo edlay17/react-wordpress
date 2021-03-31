@@ -21,7 +21,6 @@ export const Page = (props) => {
         toggleIsEmpty(currentPage.isEmpty);
     }, [currentPage.isEmpty]);
 
-    debugger;
     return (
         <>
             <Helmet>

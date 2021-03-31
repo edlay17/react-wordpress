@@ -7,7 +7,9 @@ import Button from "@material-ui/core/Button";
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 import {useForm} from "react-hook-form";
 import {addComment} from "../model/post-reducer";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import {useState} from "react";
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -52,18 +54,31 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: theme.palette.buttons.hover,
             color: theme.palette.buttons.hoverText,
         }
+    },
+    progress: {
+        color: theme.palette.secondary.main,
     }
 }));
 
 export const AddCommentForm = (props) => {
-    const dispatch = useDispatch()
+    const [message, changeMessage] = useState({isShow: false, message: ""});
+    const dispatch = useDispatch();
+    const isFetching = useSelector(state => state.post.commentsIsFetching);
     const classes = useStyles();
-    const {register, handleSubmit, setError, errors } = useForm({
+    const {register, handleSubmit, setError, errors, setValue } = useForm({
         mode: "onBlur"
     });
-    const onSubmit = data => {
-        console.log(data);
-        dispatch(addComment(data, setError));
+    const done = () => {
+        setValue('author_email', '');
+        setValue('author_name', '');
+        setValue('content', '');
+        changeMessage({
+            isShow: true,
+            message: "Done!"
+        })
+    }
+    const onSubmit = (data) => {
+        dispatch(addComment(data, setError, done));
     }
 
     return (
@@ -72,6 +87,7 @@ export const AddCommentForm = (props) => {
                 <Typography variant="h5" className={classes.title}>
                     add comment
                 </Typography>
+                {isFetching && <CircularProgress className={classes.progress}/>}
                 <form noValidate autoComplete="off" className={classes.form} onSubmit={handleSubmit(onSubmit)}>
                     <TextField
                         error={errors.author_email}
@@ -107,12 +123,16 @@ export const AddCommentForm = (props) => {
                         rows={5}
                         variant="outlined"
                     />
+                    {errors.content && <p>{errors.content.message}</p>}
+                    {message.isShow && <p>{message.message}</p>}
                     <Button
+                        name="submit"
                         type="submit"
                         variant="contained"
                         color="secondary"
                         className={classes.button}
                         startIcon={<RecordVoiceOverIcon />}
+                        onClick={() => { changeMessage({isShow: false, message: ""}) }}
                     >
                         add comment
                     </Button>

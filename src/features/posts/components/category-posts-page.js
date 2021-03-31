@@ -10,11 +10,11 @@ export const CategoryPostsPage = (props) => {
     let history = useHistory();
     const [isNotFound, toggleIsNotFound] = useState(false);
 
+    const postsPerPage = useSelector(state => state.posts.postsPerPage);
     const posts = useSelector(state => state.posts.postsData);
     const isFetching = useSelector(state => state.posts.postsIsFetching);
     const pageName = useSelector(state => state.posts.categoryName);
     const pagesCount = useSelector(state => state.posts.postsPagesCount);
-    const currentPage = useSelector(state => state.posts.postsPage);
     const isCategoryFound = useSelector(state => state.posts.isCategoryFound);
     const dispatch = useDispatch();
 
@@ -39,8 +39,8 @@ export const CategoryPostsPage = (props) => {
             </Helmet>
             {isNotFound && <Redirect to="/404" />}
             {isFetching
-                ? <LoadingCategoryPostsTemplate headerImage={props.image}/>
-                : <CategoryPostsTemplate headerImage={props.image} postsData={posts} pageName={pageName} pagesCount={pagesCount} currentPage={currentPage} changePage={changePage}/>
+                ? <LoadingCategoryPostsTemplate postsPerPage={postsPerPage} headerImage={props.image}/>
+                : <CategoryPostsTemplate headerImage={props.image} postsData={posts} pageName={pageName} pagesCount={pagesCount} currentPage={props.pageNum} changePage={changePage}/>
             }
         </>
     )}

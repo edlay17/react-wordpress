@@ -1,17 +1,20 @@
-import {links} from "../../pages";
+// material ui
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from '@material-ui/core/styles';
-import Box from "@material-ui/core/Box";
-import LogoWithNavLink from "../../ui/atoms/logo/logo";
-import MenuLink from "../../ui/atoms/menu-link/menu-link";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import useTheme from "@material-ui/core/styles/useTheme";
+
+// other features
+import {ToggleThemeButton} from "./toggle-theme/toggle-theme";
+import {DesktopMenu, MobileHamburgerIcon, MobileMenu} from "./header-menu/header-menu";
 import SearchForm from "./search-form/search-form";
-import {useDispatch, useSelector} from "react-redux";
-import {toggleThemeType} from "../globalSettings/model/global-reducer";
-import IconButton from "@material-ui/core/IconButton";
-import {Brightness3, BrightnessLow} from "@material-ui/icons";
-import { grey } from '@material-ui/core/colors';
+import {HideOnScroll} from "./hide-on-scroll/hide-on-scroll";
+
+// ui
+import LogoWithNavLink from "../../ui/atoms/logo/logo";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
     toolBar: {
@@ -19,38 +22,41 @@ const useStyles = makeStyles((theme) => ({
     },
     appBar: {
         backgroundColor: theme.palette.primary.dark,
+        minHeight: theme.spacing(7.5),
     },
+    box: {
+        display: "flex",
+    }
 }));
 
-export const HeaderTemplate = (props) => {
-    const dispatch = useDispatch();
-    const theme_type = useSelector(state => state.global.theme_type)
+export const Header = (props) => {
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down('md'));
     const classes = useStyles();
-    const menuLinks = links.map((link) =>
-        <MenuLink linkTo={link.linkAddress} linkText={link.linkText} key={link.id}/>
-    );
+
     return(
-        <AppBar position="static" className={classes.appBar}>
-            <Container position="fixed">
-                <Toolbar className={classes.toolBar}>
-                    <LogoWithNavLink logoText="Edlay.net"/>
-                    <Box>
-                        {menuLinks}
-                    </Box>
-                    <IconButton
-                        onClick={() => {theme_type === "dark" ? dispatch(toggleThemeType("light")) : dispatch(toggleThemeType("dark"))}}
-                        aria-label="delete"
-                    >
-                        {theme_type === "dark"
-                            ? <Brightness3 style={{ color: grey[100] }}/>
-                            : <BrightnessLow style={{ color: grey[100] }}/>
-                        }
-                    </IconButton>
-                    <SearchForm/>
-                </Toolbar>
-            </Container>
-        </AppBar>
+        <>
+            <HideOnScroll {...props}>
+                <AppBar position="fixed" className={classes.appBar}>
+                    <Container position="fixed">
+                        <Toolbar className={classes.toolBar}>
+                            <LogoWithNavLink logoText="Edlay.net"/>
+                            {!matches
+                                ?
+                                    <>
+                                        <DesktopMenu/>
+                                        <Box className={classes.box}>
+                                            <ToggleThemeButton/>
+                                            <SearchForm/>
+                                        </Box>
+                                    </>
+                                : <MobileHamburgerIcon/>
+                            }
+                        </Toolbar>
+                    </Container>
+                </AppBar>
+            </HideOnScroll>
+            {matches && <MobileMenu/>}
+        </>
     )
 }
-
-export default HeaderTemplate;

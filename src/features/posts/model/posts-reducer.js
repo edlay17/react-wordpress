@@ -6,20 +6,15 @@ const SET_POSTS_FROM_SEARCH = "setPostsFromSearch";
 const POSTS_TOGGLE_IS_FETCHING = "postsToggleIsFetching";
 const SET_FOUND_POSTS_ADDITIONAL_DATA = "setFoundPostsAdditionalData";
 const SET_CATEGORY = "setCategory";
-const TOGGLE_IS_CATEGORY_FOUND = "toggleIsCategoryFound";
-const SET_POSTS_PAGE = "setPostsPage";
+const POSTS_TOGGLE_IS_FOUND = "postsToggleIsFound";
 const SET_POSTS_PAGES_COUNT = "setPostsPagesCount";
 
 const setPostsPagesCount = (pagesCount) => ({
     type: SET_POSTS_PAGES_COUNT,
     pagesCount
 })
-const setPostsPage = (pageNum) => ({
-    type: SET_POSTS_PAGE,
-    pageNum
-})
-const toggleIsCategoryFound = (isFound) => ({
-    type: TOGGLE_IS_CATEGORY_FOUND,
+const postsToggleIsFound = (isFound) => ({
+    type: POSTS_TOGGLE_IS_FOUND,
     isFound
 })
 export const resetPosts = () => ({
@@ -49,28 +44,25 @@ const setFoundPostsAdditionalData = (data, elemIndex) => ({
 
 export const getPosts = (category_slug, page) => async (dispatch, getState) => {
     dispatch(postsToggleIsFetching(true));
-    dispatch(setPostsPage(page));
     const categories = await PostAPI.getCategoryName(category_slug);
     if (categories.length > 0){
-        dispatch(toggleIsCategoryFound(true));
+        dispatch(postsToggleIsFound(true));
         const category = categories[0].name;
         dispatch(setCategory(category));
-        debugger;
         const response = await PostAPI.getPosts(category, getState().posts.postsPerPage, page);
         if(Array.isArray(response.data)){
             dispatch(setPostsPagesCount(Math.ceil(response.headers["x-wp-total"] / getState().posts.postsPerPage)));
             dispatch(setPosts(response.data));
         }
         else {
-            dispatch(toggleIsCategoryFound(false));
+            dispatch(postsToggleIsFound(false));
         }
     }
-    else dispatch(toggleIsCategoryFound(false));
+    else dispatch(postsToggleIsFound(false));
     dispatch(postsToggleIsFetching(false));
 }
 export const getAllPosts = (page) => async (dispatch, getState) => {
     dispatch(postsToggleIsFetching(true));
-    dispatch(setPostsPage(page));
     const response = await PostAPI.getAllPosts(getState().posts.postsPerPage, page);
     if(Array.isArray(response.data)){
         dispatch(setPostsPagesCount(Math.ceil(response.headers["x-wp-total"] / getState().posts.postsPerPage)));
@@ -78,24 +70,21 @@ export const getAllPosts = (page) => async (dispatch, getState) => {
         dispatch(postsToggleIsFetching(false));
     }
     else{
-        dispatch(toggleIsCategoryFound(false));
+        dispatch(postsToggleIsFound(false));
     }
 }
 export const getFoundPosts = (searchRequest, page) => async (dispatch, getState) => {
     dispatch(postsToggleIsFetching(true));
-    dispatch(setPostsPage(page));
     const foundPostsResponse = await PostAPI.getFoundPosts(searchRequest, getState().posts.postsPerPage, page);
-    console.log(foundPostsResponse);
     if(Array.isArray(foundPostsResponse.data)){
         dispatch(setPostsPagesCount(Math.ceil(foundPostsResponse.headers["x-wp-total"] / getState().posts.postsPerPage)));
-        console.log(foundPostsResponse.data);
         dispatch(setPostsFromSearch(foundPostsResponse.data));
         const dataLength = getState().posts.postsData.length;
         if(dataLength > 0) {
             getState().posts.postsData.map( async (elem, index) => { // МОЖНО ЗАМЕНИТЬ НА FOR
                 const authorData = await PostAPI.getByQuery(elem.author_request); // get author info
                 let authorName = authorData.name;
-                let authorAvatar = authorData.avatar_urls["48"]; // ПРОВЕРИТЬ ЕСЛИ ТЕГОВ НЕТ
+                let authorAvatar = authorData.avatar_urls["48"];
                 const tagsData = await PostAPI.getByQuery(elem.tags_request); // get tags
                 let tags = tagsData.map(elem => elem.name);
                 let imageSrc;
@@ -126,9 +115,8 @@ export const getFoundPosts = (searchRequest, page) => async (dispatch, getState)
 }
 
 let InitialState = {
-    postsPerPage: 1,
-    postsPagesCount: 10,
-    postsPage: 5,
+    postsPerPage: 9,
+    postsPagesCount: 1,
     postsIsFetching: true,
     postsData: [],
     isCategoryFound: true,
@@ -144,14 +132,7 @@ const postsReducer = (state = InitialState, action) => {
             }
             return stateCopy;
             break;
-        case SET_POSTS_PAGE:
-            stateCopy = {
-                ...state,
-                postsPage: action.pageNum
-            }
-            return stateCopy;
-            break;
-        case TOGGLE_IS_CATEGORY_FOUND:
+        case POSTS_TOGGLE_IS_FOUND:
             stateCopy = {
                 ...state,
                 isCategoryFound: action.isFound
@@ -161,9 +142,7 @@ const postsReducer = (state = InitialState, action) => {
         case RESET_POSTS:
             stateCopy = {
                 ...state,
-                postsPerPage: 1,
-                postsPagesCount: 10,
-                postsPage: 5,
+                postsPagesCount: 1,
                 postsIsFetching: true,
                 postsData: [],
                 isCategoryFound: true,

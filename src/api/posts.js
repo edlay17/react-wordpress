@@ -1,8 +1,7 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://wp.edlay.net/wp-json/wp/v2/',
-    //withCredentials: true,
+    baseURL: 'http://wp.edlay.net/wp-json/wp/v2/'
 });
 
 export const PostAPI = {
@@ -10,9 +9,6 @@ export const PostAPI = {
         return instance.get(`posts/?per_page=${perPage}&page=${pageNum}&category_name=${category}&_embed&_fields=author,id,slug,excerpt,title,date,tags,featured_media,_links,_embedded`)
             .then(response => response)
             .catch(error => ({data: error}));
-    },
-    getCategoryName: (categorySlug) => {
-        return instance.get(`categories/?slug=${categorySlug}`).then(response => response.data);
     },
     getAllPosts: (perPage = 10, pageNum = 1) => {
         return instance.get(`posts/?per_page=${perPage}&page=${pageNum}&_embed&_fields=author,id,slug,excerpt,title,date,tags,featured_media,_links,_embedded`)
@@ -24,6 +20,9 @@ export const PostAPI = {
             .then(response => response)
             .catch(error => ({data: error}));
     },
+    getCategoryName: (categorySlug) => {
+        return instance.get(`categories/?slug=${categorySlug}`).then(response => response.data);
+    },
     getPost: (slug) =>{
         return instance.get(`posts/?slug=${slug}&_embed&_fields=id,content,title,_links,_embedded`).then(response => response.data);
     },
@@ -34,7 +33,9 @@ export const PostAPI = {
         return axios.get(query).then(response => response.data);
     },
     putComment: (data) => {
-        return instance.post(`comments`, data).then(response => response.data);
+        return instance.post(`comments`, data)
+            .then(response => response.data)
+            .catch(error => ({error}));
     }
 };
 

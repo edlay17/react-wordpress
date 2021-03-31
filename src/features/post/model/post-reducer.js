@@ -46,20 +46,23 @@ export const getPost = (slug) => async (dispatch, getState) => {
     dispatch(postToggleIsFetching(false));
 }
 
-export const addComment = (commentData, setError) => async (dispatch, getState) => {
+export const addComment = (commentData, setError, done) => async (dispatch, getState) => {
     dispatch(commentsToggleIsFetching(true));
-    /*setError("author_name", {
-        type: "manual",
-        message: "Dont Forget Your Username Should Be Cool!"
-    });*/
-    alert('heello');
     const comment = {...commentData, post: getState().post.currentPostData.id}
-    const data = await PostAPI.putComment(comment);
-    console.log("data = " + data);
-    let postId = getState().post.currentPostData.id;
-    const commentsData = await PostAPI.getComments(postId);
-    dispatch(setComments(commentsData));
-    dispatch(postToggleIsFetching(false));
+    const response = await PostAPI.putComment(comment);
+    if(response.error){
+        setError("content", {
+            type: "manual",
+            message: "Duplicate comment found. You seem to have said that already!"
+        });
+    }
+    else{
+        done();
+        let postId = getState().post.currentPostData.id;
+        const commentsData = await PostAPI.getComments(postId);
+        dispatch(setComments(commentsData));
+    }
+    dispatch(commentsToggleIsFetching(false));
 }
 
 
@@ -134,6 +137,13 @@ const postReducer = (state = InitialState, action) => {
             stateCopy = {
                 ...state,
                 postIsFetching: action.isFetching
+            };
+            return stateCopy;
+            break;
+        case COMMENTS_TOGGLE_IS_FETCHING:
+            stateCopy = {
+                ...state,
+                commentsIsFetching: action.isFetching
             };
             return stateCopy;
             break;

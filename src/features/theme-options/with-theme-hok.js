@@ -2,7 +2,7 @@ import {useSelector} from "react-redux";
 import {ThemeProvider} from "@material-ui/styles";
 import {darkTheme, lightTheme} from "../../ui/theme-options";
 
-const withTheme = Component => ({...props}) => {
+export const withTheme = Component => ({...props}) => {
     const theme_type = useSelector(state => state.global.theme_type);
     return (
         <ThemeProvider theme={theme_type === "dark" ? darkTheme : lightTheme}>
@@ -12,3 +12,4 @@ const withTheme = Component => ({...props}) => {
 };
 
 export default withTheme;
+

@@ -7,6 +7,19 @@ const useStyles = makeStyles((theme) => ({
     root: {
         marginBottom: theme.spacing(4),
     },
+    pagination: {
+        "& .MuiPaginationItem-root": {
+            backgroundColor: theme.palette.elements.main,
+            color: theme.palette.elements.text,
+            border: "none",
+            "&:hover": {
+                backgroundColor: theme.palette.elements.secondary,
+            },
+        },
+        "& .Mui-selected": {
+            backgroundColor: theme.palette.elements.secondary,
+        }
+    }
 }));
 
 export const PostCards = (props) => {
@@ -34,10 +47,9 @@ export const PostCards = (props) => {
                 {postsItems}
                 {props.pagesCount > 1 &&
                     <Grid item md={12}>
-                        <Pagination count={props.pagesCount} page={props.currentPage} variant="outlined" onChange={handleChange} showFirstButton showLastButton/>
+                        <Pagination className={classes.pagination} count={props.pagesCount} page={props.currentPage} variant="outlined" onChange={handleChange} showFirstButton showLastButton/>
                     </Grid>
                 }
             </Grid>
     )}
-
 export default PostCards;

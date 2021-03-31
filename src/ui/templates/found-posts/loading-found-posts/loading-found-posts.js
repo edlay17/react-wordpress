@@ -3,8 +3,6 @@ import Container from "@material-ui/core/Container";
 import LoadingBreadcrumbsNavigation from "../../../molecules/breadcrumbs/loading-breadcrumbs/loading-breadcrumbs";
 import HeaderImageBlock from "../../../molecules/header-image/header-image";
 import LoadingPostCards from "../../../organisms/post-cards/loading-post-cards/loading-post-cards";
-import Skeleton from "@material-ui/lab/Skeleton";
-import Typography from "@material-ui/core/Typography";
 import LoadingPageTitle from "../../../atoms/page-title/loading-page-title/loading-page-title";
 
 export const LoadingFoundPostsTemplate = (props) => {
@@ -15,7 +13,7 @@ export const LoadingFoundPostsTemplate = (props) => {
                 <Container maxWidth="lg">
                     <LoadingBreadcrumbsNavigation/>
                     <LoadingPageTitle/>
-                    <LoadingPostCards/>
+                    <LoadingPostCards count={props.postsPerPage}/>
                 </Container>
             </Grid>
         </Grid>

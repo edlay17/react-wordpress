@@ -11,6 +11,7 @@ export const AllPostsPage = (props) => {
     let history = useHistory();
     const [isNotFound, toggleIsNotFound] = useState(false);
 
+    const postsPerPage = useSelector(state => state.posts.postsPerPage);
     const isCategoryFound = useSelector(state => state.posts.isCategoryFound);
     const posts = useSelector(state => state.posts.postsData);
     const isFetching = useSelector(state => state.posts.postsIsFetching);
@@ -31,6 +32,7 @@ export const AllPostsPage = (props) => {
     const changePage = (pageNum) => {
         history.push(`/${pageNum}`);
     }
+    {console.log("FEATURE --- " + currentPage)}
 
     return (
         <>
@@ -39,8 +41,8 @@ export const AllPostsPage = (props) => {
             </Helmet>
             {isNotFound && <Redirect to="/404" />}
             {isFetching
-                ? <LoadingHomepagePostsTemplate headerImage={props.image}/>
-                : <HomepagePostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName} pagesCount={pagesCount} currentPage={currentPage} changePage={changePage}/>
+                ? <LoadingHomepagePostsTemplate headerImage={props.image} postsPerPage={postsPerPage}/>
+                : <HomepagePostsTemplate headerImage={props.image} postsData={posts} pageName={props.pageName} pagesCount={pagesCount} currentPage={props.pageNum} changePage={changePage}/>
             }
         </>
     )}

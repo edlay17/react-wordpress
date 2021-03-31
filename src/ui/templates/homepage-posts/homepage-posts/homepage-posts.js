@@ -8,6 +8,7 @@ export const HomepagePostsTemplate = (props) => {
 
     return (
         <Grid container>
+            { console.log("TEMPLATE --- " + props.currentPage) }
             <HeaderImageBlock image={props.headerImage}/>
             <Grid item xs={12}>
                 <Container maxWidth="lg">

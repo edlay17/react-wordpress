@@ -1,8 +1,6 @@
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
 import BreadcrumbsNavigation from "../../../molecules/breadcrumbs/breadcrumbs/breadcrumbs";
-import CommentCard from "../../../molecules/comment/comment/comment";
 import SinglePageTitle from "../../../atoms/single-page-title/single-page-title/single-page-title";
 import Content from "../../../atoms/content/content/content";
 

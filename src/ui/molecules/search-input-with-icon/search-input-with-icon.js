@@ -42,12 +42,16 @@ const useStyles = makeStyles((theme) => ({
             },
         },
     },
+    form: {
+        marginTop: "auto",
+        marginBottom: "auto"
+    }
 }));
 
 export const SearchInputWithIcon = (props) => {
     const classes = useStyles();
     return(
-        <form onKeyDown={props.onKeyPress}>
+        <form onKeyDown={props.onKeyPress} className={classes.form}>
             <div className={classes.search}>
                 <div className={classes.searchIcon}>
                     <SearchIcon/>

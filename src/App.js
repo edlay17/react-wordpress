@@ -1,6 +1,6 @@
 import './App.css';
 import {routes} from "./pages/index";
-import Header from "./features/header/header";
+import {Header} from "./features/header/header";
 import {MapRoutes} from "./lib/routes";
 import FooterTemplate from "./ui/organisms/footer/footer";
 
@@ -10,15 +10,16 @@ import withTheme from "./features/theme-options/with-theme-hok";
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        paddingTop: theme.spacing(7.5),
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
+        minHeight: `100vh`,
         backgroundColor: theme.palette.primary.background,
     },
 }));
 
 function App(props) {
-    const classes = useStyles();
+  const classes = useStyles();
 
   return (
       <div className={classes.root}>
