@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-wordpress/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/react-wordpress/static/js/main.9bcbd1a3.chunk.js",
-    "main.js.map": "/react-wordpress/static/js/main.9bcbd1a3.chunk.js.map",
+    "main.js": "/react-wordpress/static/js/main.50c1ccc2.chunk.js",
+    "main.js.map": "/react-wordpress/static/js/main.50c1ccc2.chunk.js.map",
     "runtime-main.js": "/react-wordpress/static/js/runtime-main.dfe7b9f4.js",
     "runtime-main.js.map": "/react-wordpress/static/js/runtime-main.dfe7b9f4.js.map",
     "static/js/2.70c0b3c9.chunk.js": "/react-wordpress/static/js/2.70c0b3c9.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.dfe7b9f4.js",
     "static/js/2.70c0b3c9.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.9bcbd1a3.chunk.js"
+    "static/js/main.50c1ccc2.chunk.js"
   ]
 }
