@@ -15,6 +15,7 @@ import {HideOnScroll} from "./hide-on-scroll/hide-on-scroll";
 // ui
 import LogoWithNavLink from "../../ui/atoms/logo/logo";
 import Box from "@material-ui/core/Box";
+import {useSelector} from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     toolBar: {
@@ -32,11 +33,12 @@ const useStyles = makeStyles((theme) => ({
 export const Header = (props) => {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
+    const isMobileMenuActive = useSelector(state => state.global.is_mobile_menu_active)
     const classes = useStyles();
 
     return(
         <>
-            <HideOnScroll {...props}>
+            <HideOnScroll {...props} isDisable={isMobileMenuActive}>
                 <AppBar position="fixed" className={classes.appBar}>
                     <Container position="fixed">
                         <Toolbar className={classes.toolBar}>
@@ -56,7 +58,7 @@ export const Header = (props) => {
                     </Container>
                 </AppBar>
             </HideOnScroll>
-            {matches && <MobileMenu/>}
+            {matches && <MobileMenu position="fixed"/>}
         </>
     )
 }

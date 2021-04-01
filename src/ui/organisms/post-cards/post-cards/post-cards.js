@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const PostCards = (props) => {
     const postsItems = props.postsData.map((post) =>
-        <Grid item md={4} sm={12}>
+        <Grid item md={4} sm={6} xs={12}>
             <PostCard
                 key={post.id}
                 slug={post.slug}

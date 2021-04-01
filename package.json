@@ -2,7 +2,7 @@
   "name": "newapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://edlay17.github.io/react-wordpress",
+  "homepage": "https://edlay17.github.io/react-wordpress",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",

@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-    BrowserRouter as Router
+    BrowserRouter as Router, HashRouter
 } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {Provider} from "react-redux";
@@ -32,12 +32,12 @@ let store = createStore(
 
 ReactDOM.render(
   <React.StrictMode>
-      <Router>
+      <HashRouter>
           <CssBaseline />
           <Provider store={store}>
               <App state={store.getState()}/>
           </Provider>
-      </Router>
+      </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         backgroundColor: theme.palette.elements.main,
         color: theme.palette.elements.text,
+        zIndex: 9999,
+    },
+    posFixed: {
+        position: "fixed",
     }
 }));
 
@@ -28,18 +32,19 @@ function ListItemLink(props) {
     return <ListItem button component={NavLink} {...props} />;
 }
 
-export const MobileMenu = () => {
+export const MobileMenu = (props) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const isMobileMenuActive = useSelector(state => state.global.is_mobile_menu_active)
     const menuLinks = links.map((link) => (
-                <ListItemLink key={link.id} to={link.linkAddress}>
+                <ListItemLink key={link.id} to={link.linkAddress} onClick={() => {dispatch(toggleIsMobileMenuActive(false))}}>
                     <ListItemText primary={link.linkText} />
                 </ListItemLink>
         )
     );
 
     return (
-        <div className={classes.root}>
+        <div className={`${classes.root} ${props.position==="fixed" && classes.posFixed}`}>
             {isMobileMenuActive &&
                 <>
                     <List>

@@ -13,7 +13,7 @@ export const toggleIsMobileMenuActive = (isActive) => ({
 
 let InitialState = {
     is_theme_type_fetching: true,
-    theme_type: "dark",
+    theme_type: "light",
     is_mobile_menu_active: false,
 };
 

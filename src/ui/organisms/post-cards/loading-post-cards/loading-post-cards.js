@@ -15,7 +15,7 @@ export const LoadingPostCards = (props) => {
     if(props.count)count=props.count;
     for (let i = 0; i < count; i++){
         skeletonItems.push(
-            <Grid item md={4} sm={12}>
+            <Grid item md={4} sm={6} xs={12}>
                 <LoadingPostCard/>
             </Grid>
         )

@@ -20,33 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc6436a8-8efb-46f4-a9d0-25f69130e1ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/header/header-menu/header-menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/header/hide-on-scroll/hide-on-scroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/header/toggle-theme/toggle-theme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/globalSettings/model/global-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/globalSettings/model/global-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/header-menu/header-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/header-menu/header-menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/post/components/add-comment-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/components/add-comment-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/model/post-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/model/posts-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/single-page/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/single-page/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/theme-options/with-theme-hok.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/theme-options/with-theme-hok.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/molecules/search-input-with-icon/search-input-with-icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/molecules/search-input-with-icon/search-input-with-icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/hide-on-scroll/hide-on-scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/hide-on-scroll/hide-on-scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/category-posts/loading-category-posts/loading-category-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/category-posts/loading-category-posts/loading-category-posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/found-posts/loading-found-posts/loading-found-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/found-posts/loading-found-posts/loading-found-posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/homepage-posts/homepage-posts/homepage-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/homepage-posts/homepage-posts/homepage-posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/homepage-posts/loading-homepage-posts/loading-homepage-posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/homepage-posts/loading-homepage-posts/loading-homepage-posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/templates/page/page/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/templates/page/page/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +57,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="E:\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -140,7 +124,7 @@
       <workItem from="1616191028107" duration="6087000" />
       <workItem from="1616200975692" duration="8795000" />
       <workItem from="1616427319537" duration="87390000" />
-      <workItem from="1617019130699" duration="18965000" />
+      <workItem from="1617019130699" duration="32438000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,7 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://wp.edlay.net/wp-json/wp/v2/'
+    baseURL: 'https://wp.edlay.net/wp-json/wp/v2/'
 });
 
 export const PostAPI = {

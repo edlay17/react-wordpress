@@ -2,11 +2,11 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 
 export const HideOnScroll = (props) => {
-    const { children, window } = props;
-    const trigger = useScrollTrigger({ target: window ? window() : undefined });
+    const { children, isDisable } = props;
+    const trigger = useScrollTrigger();
 
     return (
-        <Slide appear={false} direction="down" in={!trigger}>
+        <Slide appear={false} direction="down" in={isDisable ? true : !trigger}>
             {children}
         </Slide>
     );
