@@ -1,6 +1,9 @@
-import SearchInputWithIcon from "../../../ui/molecules/search-input-with-icon/search-input-with-icon";
+// libs
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
+
+// ui
+import SearchInputWithIcon from "../../../ui/molecules/search-input-with-icon/search-input-with-icon";
 
 export const SearchForm = (props) => {
     let [value, setValue]=useState("");

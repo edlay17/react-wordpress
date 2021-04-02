@@ -1,12 +1,15 @@
-import './App.css';
-import {routes} from "./pages/index";
-import {Header} from "./features/header/header";
+// libs
 import {MapRoutes} from "./lib/routes";
+import { makeStyles } from '@material-ui/core/styles';
+
+// ui
+import './App.css';
 import FooterTemplate from "./ui/organisms/footer/footer";
 
-// MATERIAL UI
-import { makeStyles } from '@material-ui/core/styles';
+// models, features, pages
 import withTheme from "./features/theme-options/with-theme-hok";
+import {Header} from "./features/header/header";
+import {routes} from "./pages/index";
 
 const useStyles = makeStyles((theme) => ({
     root: {

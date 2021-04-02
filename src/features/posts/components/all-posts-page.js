@@ -1,11 +1,15 @@
-import LoadingHomepagePostsTemplate
-    from "../../../ui/templates/homepage-posts/loading-homepage-posts/loading-homepage-posts";
-import HomepagePostsTemplate from "../../../ui/templates/homepage-posts/homepage-posts/homepage-posts";
+// libs
 import {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
-import {getAllPosts, resetPosts} from "../model/posts-reducer"
 import {Redirect, useHistory} from "react-router-dom";
+
+// ui
+import LoadingHomepagePostsTemplate from "../../../ui/templates/homepage-posts/loading-homepage-posts/loading-homepage-posts";
+import HomepagePostsTemplate from "../../../ui/templates/homepage-posts/homepage-posts/homepage-posts";
+
+// models
+import {getAllPosts, resetPosts} from "../model/posts-reducer"
 
 export const AllPostsPage = (props) => {
     let history = useHistory();

@@ -1,21 +1,21 @@
-// material ui
+// libs
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
+import Box from "@material-ui/core/Box";
+import {useSelector} from "react-redux";
 
-// other features
+// ui
+import LogoWithNavLink from "../../ui/atoms/logo/logo";
+
+// models, features
 import {ToggleThemeButton} from "./toggle-theme/toggle-theme";
 import {DesktopMenu, MobileHamburgerIcon, MobileMenu} from "./header-menu/header-menu";
 import SearchForm from "./search-form/search-form";
 import {HideOnScroll} from "./hide-on-scroll/hide-on-scroll";
-
-// ui
-import LogoWithNavLink from "../../ui/atoms/logo/logo";
-import Box from "@material-ui/core/Box";
-import {useSelector} from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     toolBar: {

@@ -1,5 +1,7 @@
 import {Route} from "react-router-dom";
 import {Switch} from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export function RouteWithSubRoutes(route) {
     return (
@@ -18,8 +20,21 @@ export function MapRoutes(props){
         <RouteWithSubRoutes state={props.state} key={i} {...route} />
     ));
     return (
-        <Switch>
-            {mapRoutes}
-        </Switch>
+        <>
+            <ScrollToTop/>
+            <Switch>
+                {mapRoutes}
+            </Switch>
+        </>
     )
+}
+
+export function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
 }

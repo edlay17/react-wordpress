@@ -1,10 +1,15 @@
-import PostTemplate from "./post";
-import LoadingPostTemplate from "../../../ui/templates/post/loading-post/loading-post";
+// libs
 import {Redirect} from "react-router-dom";
 import {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
+
+// ui
+import LoadingPostTemplate from "../../../ui/templates/post/loading-post/loading-post";
+
+// models, features
 import {getPost, resetPost} from "../model/post-reducer"
+import PostTemplate from "./post";
 
 export const Post = (props) => {
     const currentPost = useSelector(state => state.post.currentPostData);

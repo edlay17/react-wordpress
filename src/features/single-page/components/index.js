@@ -1,9 +1,14 @@
-import PageTemplate from "../../../ui/templates/page/page/page";
-import LoadingPageTemplate from "../../../ui/templates/page/loading-page/loading-page";
+// libs
 import {Redirect} from "react-router-dom";
 import {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
+
+// ui
+import PageTemplate from "../../../ui/templates/page/page/page";
+import LoadingPageTemplate from "../../../ui/templates/page/loading-page/loading-page";
+
+// models
 import {getPage, resetPage} from "../model/page-reducer"
 
 export const Page = (props) => {

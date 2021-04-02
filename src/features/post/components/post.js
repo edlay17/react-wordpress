@@ -1,9 +1,14 @@
+// libs
 import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
+
+// ui
 import BreadcrumbsNavigation from "../../../ui/molecules/breadcrumbs/breadcrumbs/breadcrumbs";
 import SinglePageTitle from "../../../ui/atoms/single-page-title/single-page-title/single-page-title";
 import Content from "../../../ui/atoms/content/content/content";
 import CommentsList from "../../../ui/organisms/comments-list/comments-list/comments-list";
+
+// models, features
 import AddCommentForm from "./add-comment-form";
 
 

@@ -1,10 +1,15 @@
-import CategoryPostsTemplate from "../../../ui/templates/category-posts/category-posts/category-posts";
-import LoadingCategoryPostsTemplate from "../../../ui/templates/category-posts/loading-category-posts/loading-category-posts";
+// libs
 import {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
-import {getPosts, resetPosts} from "../model/posts-reducer"
 import {Redirect, useHistory} from "react-router-dom";
+
+// ui
+import CategoryPostsTemplate from "../../../ui/templates/category-posts/category-posts/category-posts";
+import LoadingCategoryPostsTemplate from "../../../ui/templates/category-posts/loading-category-posts/loading-category-posts";
+
+// models
+import {getPosts, resetPosts} from "../model/posts-reducer"
 
 export const CategoryPostsPage = (props) => {
     let history = useHistory();

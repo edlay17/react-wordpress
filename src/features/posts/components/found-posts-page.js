@@ -1,10 +1,15 @@
+// libs
 import {useEffect} from "react";
 import Helmet from "react-helmet";
 import {useDispatch, useSelector} from 'react-redux';
-import {getFoundPosts, resetPosts} from "../model/posts-reducer"
+import {useHistory} from "react-router-dom";
+
+// ui
 import LoadingFoundPostsTemplate from "../../../ui/templates/found-posts/loading-found-posts/loading-found-posts";
 import FoundPostsTemplate from "../../../ui/templates/found-posts/found-posts/found-posts";
-import {useHistory} from "react-router-dom";
+
+// models
+import {getFoundPosts, resetPosts} from "../model/posts-reducer"
 
 export const FoundPostsPage = (props) => {
     let history = useHistory();

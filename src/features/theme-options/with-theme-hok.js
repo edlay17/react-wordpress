@@ -1,5 +1,8 @@
-import {useSelector} from "react-redux";
+// libs
 import {ThemeProvider} from "@material-ui/styles";
+import {useSelector} from "react-redux";
+
+// ui
 import {darkTheme, lightTheme} from "../../ui/theme-options";
 
 export const withTheme = Component => ({...props}) => {

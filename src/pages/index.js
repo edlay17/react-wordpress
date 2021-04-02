@@ -45,6 +45,6 @@ export const routes = [
 export const links = [
     {id: 1, linkAddress: "/posts/about-projects", linkText: "Projects"},
     {id: 2, linkAddress: "/page/about-me", linkText: "About me (CV)"},
-    {id: 3, linkAddress: "/post/react-wordpress-blog", linkText: "Demo"},
+    {id: 3, linkAddress: "/posts/demo", linkText: "Demo"},
     {id: 4, linkAddress: "/404", linkText: "404"},
 ];

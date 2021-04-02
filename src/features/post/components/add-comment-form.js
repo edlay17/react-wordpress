@@ -1,3 +1,4 @@
+// libs
 import Container from "@material-ui/core/Container";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import TextField from "@material-ui/core/TextField";
@@ -5,11 +6,13 @@ import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
-import {useForm} from "react-hook-form";
-import {addComment} from "../model/post-reducer";
-import {useDispatch, useSelector} from "react-redux";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import {useForm} from "react-hook-form";
+import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
+
+// models
+import {addComment} from "../model/post-reducer";
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -91,7 +94,7 @@ export const AddCommentForm = (props) => {
                 <form noValidate autoComplete="off" className={classes.form} onSubmit={handleSubmit(onSubmit)}>
                     <TextField
                         error={errors.author_email}
-                        inputRef={register({required: true, pattern: /^\S+@\S+$/i})}
+                        inputRef={register({required: true, pattern: /\S+@\S+\.\S+/})}
                         name="author_email"
                         className={classes.input1}
                         margin="normal"

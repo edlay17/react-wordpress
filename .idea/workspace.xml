@@ -21,15 +21,24 @@
   <component name="ChangeListManager">
     <list default="true" id="fc6436a8-8efb-46f4-a9d0-25f69130e1ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/globalSettings/model/global-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/globalSettings/model/global-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/header/header-menu/header-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/header-menu/header-menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/header/hide-on-scroll/hide-on-scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/hide-on-scroll/hide-on-scroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/loading-post-cards/loading-post-cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/post-cards/post-cards/post-cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/search-form/search-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/search-form/search-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/toggle-theme/toggle-theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/toggle-theme/toggle-theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/post/components/add-comment-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/components/add-comment-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/post/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/post/components/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/components/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/all-posts-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/category-posts-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/posts/components/found-posts-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/single-page/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/single-page/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/theme-options/with-theme-hok.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/theme-options/with-theme-hok.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/search/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/search/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/organisms/comments-list/comments-list/comments-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/organisms/comments-list/comments-list/comments-list.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/include/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -124,7 +133,9 @@
       <workItem from="1616191028107" duration="6087000" />
       <workItem from="1616200975692" duration="8795000" />
       <workItem from="1616427319537" duration="87390000" />
-      <workItem from="1617019130699" duration="32438000" />
+      <workItem from="1617019130699" duration="33740000" />
+      <workItem from="1617366219206" duration="3188000" />
+      <workItem from="1617377272085" duration="4041000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,14 @@
-import {toggleThemeType} from "../../globalSettings/model/global-reducer";
+// libs
 import {Brightness3, BrightnessLow} from "@material-ui/icons";
 import {grey} from "@material-ui/core/colors";
 import IconButton from "@material-ui/core/IconButton";
 import {useDispatch, useSelector} from "react-redux";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
+
+// models
+import {toggleThemeType} from "../../globalSettings/model/global-reducer";
+
 
 export const ToggleThemeButton = () => {
     const dispatch = useDispatch();

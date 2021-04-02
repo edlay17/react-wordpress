@@ -1,19 +1,26 @@
+// libs
 import {List} from '@material-ui/core';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import {links} from "../../../pages";
-import MenuLink from "../../../ui/atoms/menu-link/menu-link";
 import Box from "@material-ui/core/Box";
 import MenuIcon from "@material-ui/icons/Menu";
 import {grey} from "@material-ui/core/colors";
 import IconButton from "@material-ui/core/IconButton";
 import {makeStyles} from "@material-ui/core/styles";
-import {useDispatch, useSelector} from "react-redux";
-import {toggleIsMobileMenuActive} from "../../globalSettings/model/global-reducer";
 import Divider from '@material-ui/core/Divider';
 import {Link as NavLink} from "react-router-dom";
-import SearchForm from "../search-form/search-form";
+import {useDispatch, useSelector} from "react-redux";
+
+// ui
+import MenuLink from "../../../ui/atoms/menu-link/menu-link";
+
+// models, features
+import {toggleIsMobileMenuActive} from "../../globalSettings/model/global-reducer";
 import {ToggleThemeButtonMobile} from "../toggle-theme/toggle-theme";
+import SearchForm from "../search-form/search-form";
+
+// pages
+import {links} from "../../../pages";
 
 
 const useStyles = makeStyles((theme) => ({

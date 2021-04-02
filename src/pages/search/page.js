@@ -9,10 +9,10 @@ export const SearchPostsPage = (props) => {
 
     return (
         <>
-        {request.length > 0
-                ? <FoundPostsPage pageName={"Search for: " + request} searchRequest={request} pageNum={pageNum} image={forest}/>
-                : <NotFoundPage/>
-        }
+            {request.length > 0
+                    ? <FoundPostsPage pageName={"Search for: " + request} searchRequest={request} pageNum={pageNum} image={forest}/>
+                    : <NotFoundPage/>
+            }
         </>
     )}
 
