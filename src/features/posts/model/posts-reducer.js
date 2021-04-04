@@ -114,7 +114,7 @@ export const getFoundPosts = (searchRequest, page) => async (dispatch, getState)
     }
 }
 
-let InitialState = {
+const InitialState = {
     postsPerPage: 9,
     postsPagesCount: 1,
     postsIsFetching: true,
@@ -243,7 +243,7 @@ const postsReducer = (state = InitialState, action) => {
             return stateCopy;
             break;
         default:
-            return {...state}
+            return state;
             break;
     }
 }

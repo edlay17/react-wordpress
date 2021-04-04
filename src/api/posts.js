@@ -21,16 +21,20 @@ export const PostAPI = {
             .catch(error => ({data: error}));
     },
     getCategoryName: (categorySlug) => {
-        return instance.get(`categories/?slug=${categorySlug}`).then(response => response.data);
+        return instance.get(`categories/?slug=${categorySlug}`)
+            .then(response => response.data);
     },
     getPost: (slug) =>{
-        return instance.get(`posts/?slug=${slug}&_embed&_fields=id,content,title,_links,_embedded`).then(response => response.data);
+        return instance.get(`posts/?slug=${slug}&_embed&_fields=id,content,title,_links,_embedded`)
+            .then(response => response.data);
     },
     getComments: (postId) => {
-        return instance.get(`comments/?post=${postId}`).then(response => response.data);
+        return instance.get(`comments/?post=${postId}`)
+            .then(response => response.data);
     },
     getByQuery: (query) =>{
-        return axios.get(query).then(response => response.data);
+        return axios.get(query)
+            .then(response => response.data);
     },
     putComment: (data) => {
         return instance.post(`comments`, data)
@@ -41,6 +45,7 @@ export const PostAPI = {
 
 export const PageAPI = {
     getPage: (slug) =>{
-        return instance.get(`pages/?slug=${slug}&_fields=id,content,title`).then(response => response.data);
+        return instance.get(`pages/?slug=${slug}&_fields=id,content,title`)
+            .then(response => response.data);
     },
 }

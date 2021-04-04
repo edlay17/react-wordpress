@@ -45,13 +45,13 @@ export const Header = (props) => {
                             <LogoWithNavLink logoText="Edlay.net"/>
                             {!matches
                                 ?
-                                    <>
-                                        <DesktopMenu/>
-                                        <Box className={classes.box}>
-                                            <ToggleThemeButton/>
-                                            <SearchForm/>
-                                        </Box>
-                                    </>
+                                <>
+                                    <DesktopMenu/>
+                                    <Box className={classes.box}>
+                                        <ToggleThemeButton/>
+                                        <SearchForm/>
+                                    </Box>
+                                </>
                                 : <MobileHamburgerIcon/>
                             }
                         </Toolbar>

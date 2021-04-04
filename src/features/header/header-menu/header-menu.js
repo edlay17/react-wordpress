@@ -22,7 +22,6 @@ import SearchForm from "../search-form/search-form";
 // pages
 import {links} from "../../../pages";
 
-
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
@@ -35,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function ListItemLink(props) {
+const ListItemLink = (props) => {
     return <ListItem button component={NavLink} {...props} />;
 }
 
@@ -43,8 +42,11 @@ export const MobileMenu = (props) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const isMobileMenuActive = useSelector(state => state.global.is_mobile_menu_active)
+    const onLinkClick = () => {
+        dispatch(toggleIsMobileMenuActive(false));
+    };
     const menuLinks = links.map((link) => (
-                <ListItemLink key={link.id} to={link.linkAddress} onClick={() => {dispatch(toggleIsMobileMenuActive(false))}}>
+                <ListItemLink key={link.id} to={link.linkAddress} onClick={onLinkClick}>
                     <ListItemText primary={link.linkText} />
                 </ListItemLink>
         )
@@ -85,13 +87,21 @@ export const DesktopMenu = () => {
 export const MobileHamburgerIcon = () => {
     const dispatch = useDispatch();
     const isMobileMenuActive = useSelector(state => state.global.is_mobile_menu_active);
+    const styles = {
+        color: grey[100],
+    }
+    const toggleMobileMenu = () => {
+            if(isMobileMenuActive){
+                dispatch(toggleIsMobileMenuActive(false));
+            }
+            else{
+                dispatch(toggleIsMobileMenuActive(true));
+            }
+    }
 
     return (
-        <IconButton onClick={() => {
-            if(isMobileMenuActive)dispatch(toggleIsMobileMenuActive(false))
-            else dispatch(toggleIsMobileMenuActive(true))
-        }}>
-            <MenuIcon fontSize="large" style={{ color: grey[100] }}/>
+        <IconButton onClick={toggleMobileMenu}>
+            <MenuIcon fontSize="large" style={styles}/>
         </IconButton>
     )
 }

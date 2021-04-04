@@ -11,7 +11,7 @@ export const toggleIsMobileMenuActive = (isActive) => ({
 })
 
 
-let InitialState = {
+const InitialState = {
     is_theme_type_fetching: true,
     theme_type: "light",
     is_mobile_menu_active: false,
@@ -35,7 +35,7 @@ const globalReducer = (state = InitialState, action) => {
             return stateCopy;
             break;
         default:
-            return {...state}
+            return state
             break;
     }
 }

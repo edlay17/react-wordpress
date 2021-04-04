@@ -53,7 +53,7 @@ export const addComment = (commentData, setError, done) => async (dispatch, getS
     if(response.error){
         setError("content", {
             type: "manual",
-            message: "Duplicate comment found. You seem to have said that already!"
+            message: response.error,
         });
     }
     else{
@@ -66,7 +66,7 @@ export const addComment = (commentData, setError, done) => async (dispatch, getS
 }
 
 
-let InitialState = {
+const InitialState = {
     postIsFetching: true,
     commentsIsFetching: false,
     currentPostData: {
@@ -148,7 +148,7 @@ const postReducer = (state = InitialState, action) => {
             return stateCopy;
             break;
         default:
-            return {...state}
+            return state;
             break;
     }
 }
