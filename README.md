@@ -2,7 +2,7 @@
 
 This project on github.io [react-wordpress blog](https://edlay17.github.io/react-wordpress/).
 
-Used technologies: react/redux, hooks, react-hook-form, material UI, 
+react/redux, hooks, react-hook-form, material UI, 
 [feature slices design 1.0](https://featureslices.dev/v1.0.html), 
 axios, [wordpress rest api](https://developer.wordpress.org/rest-api/).
 
